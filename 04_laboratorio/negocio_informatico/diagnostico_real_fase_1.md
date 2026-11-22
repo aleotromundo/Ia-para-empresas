@@ -56,6 +56,10 @@ Una futura herramienta podría ayudar a ordenar la información que llega en tex
 
 Actualmente no se entrega un comprobante formal cuando el cliente deja un equipo. Las condiciones de recepción y el acuerdo quedan conversados por WhatsApp. Esto abre una oportunidad para que el futuro sistema genere un comprobante simple, compartible o imprimible, con fecha, identificación del equipo, estado físico, accesorios recibidos, falla declarada y condiciones iniciales acordadas. Debe servir como respaldo para ambas partes sin agregar pasos administrativos innecesarios ni reemplazar la conversación por WhatsApp.
 
+## 1.15. Consultas que no se convierten en trabajos
+
+El responsable confirma que varios clientes consultan por WhatsApp o por otros medios, pero luego no vuelven a confirmar ni concretan el trabajo. Esto plantea la posibilidad de distinguir en el registro entre una consulta inicial, un presupuesto enviado y un trabajo confirmado/ingresado. Así se evita mezclar oportunidades todavía abiertas con reparaciones reales y, si resulta útil, se podría dejar constancia de consultas pendientes de respuesta. No se deben enviar seguimientos automáticos sin definir antes si el responsable quiere hacerlo y con qué criterio.
+
 ## 1.14. Organización y prioridad de trabajos
 
 Al preguntarle cómo decide qué reparación atender primero cuando tiene varios trabajos pendientes, el responsable respondió que no tiene un criterio fijo claramente definido y que va resolviendo sobre la marcha («ahí algo invento»). Esto no confirma por sí solo que exista una dificultad importante, pero sí indica que la organización diaria es flexible e improvisada. Una herramienta podría mostrar los trabajos pendientes y sus estados para ayudar a visualizar la carga, sin imponer prioridades automáticas ni reemplazar el criterio del responsable.
