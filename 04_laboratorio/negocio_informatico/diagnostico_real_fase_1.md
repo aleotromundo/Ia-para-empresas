@@ -34,6 +34,13 @@ Además de los servicios anteriores, el responsable realiza:
 
 Esto amplía el alcance del negocio: no se limita a reparación de computadoras, sino que también ofrece soporte técnico y resolución de problemas tecnológicos de distinta naturaleza. Conviene distinguir estas categorías al registrar cada trabajo para poder comparar tiempos, precios, costos y rentabilidad por tipo de servicio.
 
+
+## 1.3. Modalidad comercial
+
+El responsable puede orientar y aconsejar a los clientes sobre qué computadora, notebook, componente o accesorio les conviene comprar, pero no le gusta dedicarse a la venta de productos. Por lo tanto, el valor comercial del negocio está principalmente en el asesoramiento técnico independiente y en los servicios de soporte y reparación, no en mantener un catálogo o impulsar ventas de equipos.
+
+Esto abre una oportunidad para ofrecer asesoramiento de compra como parte del servicio: entender la necesidad y el presupuesto del cliente, explicar alternativas y recomendar opciones adecuadas sin que el negocio tenga que convertirse en una tienda.
+
 ## 2. Presupuestos y decisiones de precio
 
 - Los precios se calculan principalmente según la experiencia.
@@ -98,7 +105,7 @@ La carga debe ser muy rápida y permitir completar datos gradualmente. No se deb
 ## 7. Próximos datos a relevar
 
 - Tipos de reparaciones más frecuentes.
-- Si se atienden también ventas de equipos, accesorios u otros servicios.
+- Qué formato podría tener el asesoramiento de compra (por ejemplo, consulta puntual o servicio incluido en una reparación), sin convertirlo en venta de productos.
 - Qué información mínima necesita conservarse de cada cliente y equipo.
 - Qué dispositivos y herramientas usa habitualmente para trabajar.
 - Qué forma de registro sería suficientemente rápida para mantenerla todos los días.
