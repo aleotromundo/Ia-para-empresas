@@ -35,3 +35,7 @@ Elegir un problema frecuente, construir una solución pequeña y demostrable, pr
 [ Abrir prototipo de registro y seguimiento de reparaciones ](prototipo_reparaciones/index.html)
 
 Es una prueba local: guarda los registros en el navegador mediante almacenamiento local. No sincroniza entre dispositivos, no tiene respaldo y no debe utilizarse todavía como sistema productivo. Sirve para validar el flujo y los campos antes de conectar una base de datos o incorporar automatizaciones.
+
+## Arquitectura del asistente
+
+- [Arquitectura propuesta — OTROMUNDO AI](arquitectura_otromundo_ai.md)
