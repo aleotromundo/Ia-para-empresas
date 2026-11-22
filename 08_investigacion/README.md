@@ -2,6 +2,9 @@
 
 Registrar oportunidades y novedades con fecha y fuentes verificables.
 
+## Informes
+- [Informe semanal — 22 de noviembre de 2026](2026-11-22_informe_oportunidades.md)
+
 ## Ficha de investigación
 - Fecha:
 - Oportunidad:
