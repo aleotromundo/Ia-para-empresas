@@ -23,6 +23,17 @@ En el caso de la instalación de Windows, el servicio normalmente se entrega com
 
 Estos servicios quedan registrados como los primeros ejemplos confirmados para diseñar categorías de trabajo, paquetes de servicio, plantillas de recepción y referencias futuras de presupuestos. Todavía falta relevar otros trabajos habituales.
 
+## 1.2. Otros trabajos y soporte identificados
+
+Además de los servicios anteriores, el responsable realiza:
+- Reparaciones físicas de PC y notebooks, incluidos cambios de pantalla.
+- Resolución de fallas y errores que puedan surgir en los equipos.
+- Soporte de software y solución de problemas de configuración o funcionamiento.
+- Resolución de problemas de conexión a Internet o conectividad.
+- Asistencia y solución de problemas relacionados con televisores.
+
+Esto amplía el alcance del negocio: no se limita a reparación de computadoras, sino que también ofrece soporte técnico y resolución de problemas tecnológicos de distinta naturaleza. Conviene distinguir estas categorías al registrar cada trabajo para poder comparar tiempos, precios, costos y rentabilidad por tipo de servicio.
+
 ## 2. Presupuestos y decisiones de precio
 
 - Los precios se calculan principalmente según la experiencia.
