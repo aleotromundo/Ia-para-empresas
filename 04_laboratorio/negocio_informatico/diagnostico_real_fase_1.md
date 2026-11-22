@@ -52,6 +52,12 @@ Este intercambio multimedia forma parte del flujo normal de atención, no es una
 
 Una futura herramienta podría ayudar a ordenar la información que llega en texto, audio, fotos y videos, resumir el caso y sugerir preguntas de seguimiento. Las conclusiones técnicas deben ser revisadas por el responsable; una imagen o un audio por sí solos no garantizan un diagnóstico correcto.
 
+## 1.5. Cobro por asistencia remota
+
+El responsable ha aprendido a ponerle precio a la ayuda técnica que brinda a distancia, pero identifica dos situaciones frecuentes: a veces el cliente se sorprende cuando conoce el costo de esa asistencia y otras veces el trabajo termina sin cobrarse.
+
+Esto señala una necesidad de hacer más claro el alcance del servicio remoto y comunicar sus condiciones económicas antes de dedicar tiempo significativo. No se trata necesariamente de fijar una tarifa rígida: podría definirse una forma sencilla de explicar cuándo una orientación inicial es gratuita, cuándo comienza una asistencia técnica cobrable y qué incluye cada intervención. Los criterios y valores deben ser definidos por el responsable.
+
 ## 2. Presupuestos y decisiones de precio
 
 - Los precios se calculan principalmente según la experiencia.
@@ -82,6 +88,7 @@ Una futura herramienta podría ayudar a ordenar la información que llega en tex
 | INF-14 | Ayuda para comunicar cambios de alcance | Preparar mensajes claros y respetuosos cuando aparece trabajo adicional | Media |
 | INF-15 | Análisis de rentabilidad | Comparar precio cobrado, gastos y tiempo invertido | Media, requiere registros consistentes |
 | INF-16 | Asistente de prediagnóstico remoto | Ordenar mensajes, fotos, audios y videos recibidos por WhatsApp; resumir el caso y sugerir preguntas de seguimiento | Alta, sujeto a validación humana |
+| INF-17 | Claridad y registro del cobro remoto | Explicar de antemano cuándo una asistencia a distancia tiene costo, qué incluye y registrar si fue cobrada | Alta |
 
 ## 5. Primera hipótesis de solución
 
