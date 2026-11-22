@@ -56,6 +56,10 @@ Una futura herramienta podría ayudar a ordenar la información que llega en tex
 
 Actualmente no se entrega un comprobante formal cuando el cliente deja un equipo. Las condiciones de recepción y el acuerdo quedan conversados por WhatsApp. Esto abre una oportunidad para que el futuro sistema genere un comprobante simple, compartible o imprimible, con fecha, identificación del equipo, estado físico, accesorios recibidos, falla declarada y condiciones iniciales acordadas. Debe servir como respaldo para ambas partes sin agregar pasos administrativos innecesarios ni reemplazar la conversación por WhatsApp.
 
+## 1.12. Clientes que regresan por fallas relacionadas
+
+El responsable confirma que algunos clientes vuelven meses después por una falla que puede estar relacionada con una reparación anterior. Esto hace útil conservar un historial consultable por cliente y equipo, con la reparación realizada, fecha, trabajo y repuestos utilizados cuando se conozcan, precio cobrado y observaciones posteriores. El sistema debería permitir vincular una nueva visita con el trabajo anterior para revisar el antecedente y evaluar cada caso, sin asumir automáticamente que se trata de una garantía o que la falla está causada por la reparación previa.
+
 ## 1.11. Retiro de equipos terminados
 
 El responsable indica que, una vez avisado que el equipo está pronto, **a veces debe esperar a que el cliente lo retire**. Los casos en que un equipo queda varios días o semanas sin ser retirado ocurrían con mayor frecuencia antes, aunque todavía pueden suceder. No se definió todavía cuánto suelen durar esas demoras ni si generan problemas de espacio o seguimiento. Conviene que el sistema permita distinguir entre «reparación terminada / cliente avisado» y «equipo retirado», y registrar la fecha de retiro cuando ocurra, sin asumir plazos ni enviar recordatorios automáticos sin aprobación.
