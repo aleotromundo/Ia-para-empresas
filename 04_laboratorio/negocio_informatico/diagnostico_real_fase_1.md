@@ -58,7 +58,7 @@ Actualmente no se entrega un comprobante formal cuando el cliente deja un equipo
 
 ## 1.11. Retiro de equipos terminados
 
-El responsable indica que, una vez avisado que el equipo está pronto, **a veces debe esperar a que el cliente lo retire**. No se definió todavía cuánto suele demorar ni si esto genera problemas de espacio o seguimiento. Conviene que el sistema permita distinguir entre «reparación terminada / cliente avisado» y «equipo retirado», y registrar la fecha de retiro cuando ocurra, sin asumir plazos ni enviar recordatorios automáticos sin aprobación.
+El responsable indica que, una vez avisado que el equipo está pronto, **a veces debe esperar a que el cliente lo retire**. Los casos en que un equipo queda varios días o semanas sin ser retirado ocurrían con mayor frecuencia antes, aunque todavía pueden suceder. No se definió todavía cuánto suelen durar esas demoras ni si generan problemas de espacio o seguimiento. Conviene que el sistema permita distinguir entre «reparación terminada / cliente avisado» y «equipo retirado», y registrar la fecha de retiro cuando ocurra, sin asumir plazos ni enviar recordatorios automáticos sin aprobación.
 
 ## 1.10. Consultas sobre el estado de la reparación
 
