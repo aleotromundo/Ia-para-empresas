@@ -19,7 +19,9 @@ El responsable indicó que entre los trabajos que realiza con mayor frecuencia e
 - Reemplazo de disco duro por una unidad SSD.
 - Instalación de Windows.
 
-Estos servicios quedan registrados como los primeros ejemplos confirmados para diseñar categorías de trabajo, plantillas de recepción y referencias futuras de presupuestos. Todavía falta relevar otros trabajos habituales.
+En el caso de la instalación de Windows, el servicio normalmente se entrega completo, incluyendo instalación de programas, drivers, configuración y puesta a punto de la computadora.
+
+Estos servicios quedan registrados como los primeros ejemplos confirmados para diseñar categorías de trabajo, paquetes de servicio, plantillas de recepción y referencias futuras de presupuestos. Todavía falta relevar otros trabajos habituales.
 
 ## 2. Presupuestos y decisiones de precio
 
