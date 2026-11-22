@@ -56,6 +56,10 @@ Una futura herramienta podría ayudar a ordenar la información que llega en tex
 
 Actualmente no se entrega un comprobante formal cuando el cliente deja un equipo. Las condiciones de recepción y el acuerdo quedan conversados por WhatsApp. Esto abre una oportunidad para que el futuro sistema genere un comprobante simple, compartible o imprimible, con fecha, identificación del equipo, estado físico, accesorios recibidos, falla declarada y condiciones iniciales acordadas. Debe servir como respaldo para ambas partes sin agregar pasos administrativos innecesarios ni reemplazar la conversación por WhatsApp.
 
+## 1.13. Historial unificado por cliente
+
+El responsable considera ideal que cada cliente tenga una ficha donde consultar rápidamente el historial de sus equipos y reparaciones. Esta preferencia confirma que el sistema debería permitir buscar por cliente y acceder a las intervenciones anteriores, además de consultar cada equipo por separado. La ficha debe facilitar la recuperación de antecedentes sin depender de la memoria ni de búsquedas manuales en WhatsApp.
+
 ## 1.12. Clientes que regresan por fallas relacionadas
 
 El responsable confirma que algunos clientes vuelven meses después por una falla que puede estar relacionada con una reparación anterior. Esto hace útil conservar un historial consultable por cliente y equipo, con la reparación realizada, fecha, trabajo y repuestos utilizados cuando se conozcan, precio cobrado y observaciones posteriores. El sistema debería permitir vincular una nueva visita con el trabajo anterior para revisar el antecedente y evaluar cada caso, sin asumir automáticamente que se trata de una garantía o que la falla está causada por la reparación previa.
