@@ -133,7 +133,7 @@ header{display:flex;align-items:center;justify-content:space-between;gap:16px;ma
        clienteId = customer.id;
      }
      const {data:equipment,error:equipmentError} = await client.from('equipos').insert({
-       cliente_id:clienteId,tipo:val('tipo') || 'otro',marca:val('marca') || null,modelo:val('modelo') || null,estado_fisico:'A revisar',estado_equipo:'en_taller'
+       cliente_id:clienteId,tipo:val('tipo') || 'otro',marca:val('marca') || null,modelo:val('modelo') || null,estado_fisico:'A revisar'
      }).select('id').single();
      if (equipmentError) throw equipmentError;
      const {data:repair,error:repairError} = await client.from('reparaciones').insert({
@@ -143,7 +143,7 @@ header{display:flex;align-items:center;justify-content:space-between;gap:16px;ma
        await client.from('equipos').delete().eq('id',equipment.id);
        throw repairError;
      }
-     await client.from('actividad_asistente').insert({entidad_tipo:'reparacion',entidad_id:repair.id,accion:'ingreso_registrado',detalle:{cliente:val('cliente'),marca:val('marca'),modelo:val('modelo'),equipo_id:equipment.id},resultado:'confirmado'});
+     // El esquema SQL inicial no incluye todavía una tabla de actividad del asistente.
      feedback.textContent = '¡Ingreso guardado! Cliente, equipo y reparación ya están en Supabase. ID: ' + repair.id;
      intakeForm.reset();
      if (typeof add === 'function') add('Registré el ingreso de ' + customerName + ' en la base del taller. Ya quedó guardado; el diagnóstico sigue pendiente.');
