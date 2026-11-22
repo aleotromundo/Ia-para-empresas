@@ -56,6 +56,10 @@ Una futura herramienta podría ayudar a ordenar la información que llega en tex
 
 Actualmente no se entrega un comprobante formal cuando el cliente deja un equipo. Las condiciones de recepción y el acuerdo quedan conversados por WhatsApp. Esto abre una oportunidad para que el futuro sistema genere un comprobante simple, compartible o imprimible, con fecha, identificación del equipo, estado físico, accesorios recibidos, falla declarada y condiciones iniciales acordadas. Debe servir como respaldo para ambas partes sin agregar pasos administrativos innecesarios ni reemplazar la conversación por WhatsApp.
 
+## 1.20. Resultado económico mensual
+
+El responsable confirma que le interesa poder conocer cuánto gana realmente por mes con el taller, descontando repuestos y gastos. Esto establece como objetivo futuro un resumen mensual que diferencie ingresos monetarios, intercambios, costos de repuestos y otros gastos, y que muestre un resultado económico estimado con datos registrados. Para que el cálculo sea confiable, habrá que empezar a registrar esos movimientos de manera sencilla y distinguir dinero cobrado de acuerdos no monetarios. No se deben presentar como ganancia cifras que no estén respaldadas por datos.
+
 ## 1.19. Modalidades de cobro
 
 En la conversación sobre medios de pago, el responsable mencionó el uso de Prex y también indicó que a veces realiza intercambios. Conviene que el futuro registro de cada trabajo permita indicar cómo se resolvió el pago —por ejemplo, efectivo, Prex o intercambio— y describir el acuerdo cuando no sea un pago monetario. No se deben asumir valores ni registrar un intercambio como ingreso en efectivo.
