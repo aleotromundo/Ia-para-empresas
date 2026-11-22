@@ -104,6 +104,7 @@ Cada reparación debería poder guardar, como mínimo:
 - Cliente y medio de contacto (con acceso restringido).
 - Tipo de equipo.
 - Estado físico al recibirlo.
+- Accesorios y elementos que entrega el cliente junto con el equipo (por ejemplo, cargador, fuente, cables u otros periféricos).
 - Falla que presenta o que informa el cliente.
 - Diagnóstico y notas técnicas.
 - Presupuesto comunicado y fecha.
@@ -132,7 +133,7 @@ La carga debe ser muy rápida y permitir completar datos gradualmente. No se deb
 
 - Tipos de reparaciones más frecuentes.
 - Qué formato podría tener el asesoramiento de compra (por ejemplo, consulta puntual o servicio incluido en una reparación), sin convertirlo en venta de productos.
-- Qué información mínima necesita conservarse de cada cliente y equipo: ya identificó como datos importantes el estado físico del equipo al recibirlo y la falla que presenta.
+- Qué información mínima necesita conservarse de cada cliente y equipo: ya identificó como datos importantes el estado físico del equipo al recibirlo, los accesorios que entrega el cliente y la falla que presenta.
 - Qué dispositivos y herramientas usa habitualmente para trabajar: no mantiene un conjunto fijo de programas; va variando las herramientas según el problema y el caso. Ya se confirmó el uso de AnyDesk para algunas asistencias remotas.
 - Qué forma de registro sería suficientemente rápida para mantenerla todos los días.
 
