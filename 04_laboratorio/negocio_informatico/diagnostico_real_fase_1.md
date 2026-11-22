@@ -228,3 +228,8 @@ El responsable indica que los equipos que ingresan para reparación se colocan e
 ## 1.26. Equipos en espera
 
 Los equipos que no están en trabajo activo —por ejemplo, los que esperan repuestos, autorización u otro paso— quedan cerca de la mesa de trabajo, en un mueble. No se confirmó que estén separados por motivo o estado. El diseño futuro puede reflejar tanto la ubicación física (mesa o mueble) como el motivo de espera, sin imponer una clasificación que hoy no exista.
+
+
+## 1.27. Identificación física de los equipos
+
+El responsable identifica los equipos tanto por reconocimiento directo como, en algunas ocasiones, mediante etiquetas. El uso de etiquetas no es todavía un procedimiento constante. Una futura herramienta podría generar una identificación breve para cada ingreso (por ejemplo, número de trabajo o etiqueta imprimible) que permita reconocer rápidamente el equipo y vincularlo con su ficha, sin depender exclusivamente de la memoria.
