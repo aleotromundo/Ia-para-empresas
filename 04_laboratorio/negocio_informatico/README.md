@@ -46,3 +46,8 @@ Es una prueba local: guarda los registros en el navegador mediante almacenamient
 [Probar la primera pantalla de OTROMUNDO AI](prototipo_asistente/index.html)
 
 Maqueta navegable de la experiencia conversacional, con atajos y trabajos ficticios. No está conectada todavía a una IA ni a una base de datos.
+
+
+## Base de datos Supabase
+
+- [Esquema SQL inicial](supabase/001_esquema_inicial.sql): tablas, relaciones, índices y políticas RLS para el primer sistema del taller. Ejecutar primero en un proyecto Supabase vacío y probar antes de cargar datos reales.
