@@ -83,7 +83,7 @@ header{display:flex;align-items:center;justify-content:space-between;gap:16px;ma
  const setBusy = (busy) => { saveBtn.disabled = busy; saveBtn.textContent = busy ? 'Guardando…' : 'Guardar ingreso'; };
  async function renderSession(session) {
    const logged = !!session;
-   loginBox.hidden = logged; sessionBox.hidden = !logged;
+   loginBox.hidden = logged; loginBox.style.display = logged ? 'none' : 'grid'; sessionBox.hidden = !logged;
    sessionBox.style.display = logged ? 'flex' : 'none';
    sessionEmail.textContent = logged ? 'Sesión activa: ' + (session.user.email || 'usuario autenticado') : '';
    statusEl.textContent = logged ? 'Conectado · sesión segura' : 'Supabase · sin iniciar sesión';
@@ -116,6 +116,7 @@ header{display:flex;align-items:center;justify-content:space-between;gap:16px;ma
    if (!session) { feedback.textContent = 'Primero iniciá sesión.'; return; }
    const fd = new FormData(intakeForm);
    const val = (name) => String(fd.get(name) || '').trim();
+   const customerName = val('cliente');
    setBusy(true); feedback.textContent = 'Guardando cliente, equipo y reparación…';
    try {
      const {data:existing,error:findError} = await client.from('clientes').select('id').eq('telefono',val('telefono')).eq('nombre',val('cliente')).limit(1);
@@ -140,7 +141,7 @@ header{display:flex;align-items:center;justify-content:space-between;gap:16px;ma
      await client.from('actividad_asistente').insert({entidad_tipo:'reparacion',entidad_id:repair.id,accion:'ingreso_registrado',detalle:{cliente:val('cliente'),marca:val('marca'),modelo:val('modelo'),equipo_id:equipment.id},resultado:'confirmado'});
      feedback.textContent = '¡Ingreso guardado! Cliente, equipo y reparación ya están en Supabase. ID: ' + repair.id;
      intakeForm.reset();
-     if (typeof add === 'function') add('Registré el ingreso de ' + val('cliente') + ' en la base del taller. Ya quedó guardado; el diagnóstico sigue pendiente.');
+     if (typeof add === 'function') add('Registré el ingreso de ' + customerName + ' en la base del taller. Ya quedó guardado; el diagnóstico sigue pendiente.');
    } catch (err) {
      feedback.textContent = 'No se pudo completar el ingreso: ' + (err?.message || String(err)) + '. Revisá las políticas RLS y las relaciones.';
    } finally { setBusy(false); }
