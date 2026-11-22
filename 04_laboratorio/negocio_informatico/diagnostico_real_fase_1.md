@@ -56,13 +56,13 @@ Una futura herramienta podría ayudar a ordenar la información que llega en tex
 
 Actualmente no se entrega un comprobante formal cuando el cliente deja un equipo. Las condiciones de recepción y el acuerdo quedan conversados por WhatsApp. Esto abre una oportunidad para que el futuro sistema genere un comprobante simple, compartible o imprimible, con fecha, identificación del equipo, estado físico, accesorios recibidos, falla declarada y condiciones iniciales acordadas. Debe servir como respaldo para ambas partes sin agregar pasos administrativos innecesarios ni reemplazar la conversación por WhatsApp.
 
-## 1.22. Control de stock de componentes usados
+## 1.22. Control de stock de componentes usados y recuperados
 
-El responsable indica que no lleva un control consciente o sistemático de las piezas usadas que conserva. Actualmente las identifica y busca cuando las necesita, sin un inventario formal. Esto abre una oportunidad para un inventario muy simple y gradual, que permita anotar componentes recuperados o guardados, tipo/modelo, estado y ubicación física aproximada. No conviene plantear un sistema complejo ni exigir registrar todo de una vez: primero habría que comprobar si un inventario mínimo le ahorra tiempo y evita perder de vista piezas útiles.
+El responsable indica que no lleva un control consciente o sistemático de las piezas que conserva. Parte de ese stock está formado por componentes recuperados de computadoras que ya no tienen arreglo, que guarda para reutilizarlos en otras reparaciones. Actualmente identifica y busca las piezas cuando las necesita, sin un inventario formal. Esto abre una oportunidad para un inventario muy simple y gradual, que permita anotar componentes recuperados o guardados, equipo de origen cuando se conozca, tipo/modelo, estado y ubicación física aproximada. No conviene plantear un sistema complejo ni exigir registrar todo de una vez: primero habría que comprobar si un inventario mínimo le ahorra tiempo y evita perder de vista piezas útiles.
 
 ## 1.21. Compra de repuestos y stock usado
 
-El responsable indica que, en la mayoría de los casos, manda al cliente a comprar el repuesto necesario. También dispone de stock de diversos componentes y materiales usados que puede aprovechar en algunas reparaciones. El futuro registro debería distinguir si el repuesto lo aportó el cliente, si salió del stock propio (y si era usado) o si lo compró el responsable. Para analizar costos y rentabilidad, conviene registrar el costo real cuando exista y no asignar un costo inventado a componentes usados cuyo valor no esté determinado.
+El responsable indica que, en la mayoría de los casos, manda al cliente a comprar el repuesto necesario. También dispone de stock de diversos componentes y materiales usados que puede aprovechar en algunas reparaciones; una parte de ese stock proviene de equipos que ya no tienen arreglo y de los que recupera piezas reutilizables. El futuro registro debería distinguir si el repuesto lo aportó el cliente, si salió del stock propio (nuevo, usado o recuperado) o si lo compró el responsable. Para analizar costos y rentabilidad, conviene registrar el costo real cuando exista y no asignar un costo de compra inventado a componentes recuperados cuyo valor no esté determinado.
 
 ## 1.20. Resultado económico mensual
 
