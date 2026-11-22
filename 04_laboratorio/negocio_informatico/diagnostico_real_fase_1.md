@@ -238,3 +238,8 @@ El responsable identifica los equipos tanto por reconocimiento directo como, en 
 ## 1.28. Retomar trabajos interrumpidos
 
 El responsable confirma que, cuando interrumpe una reparación para atender otra tarea, puede olvidarse de retomarla; si nadie se lo recuerda, el trabajo puede quedar detenido. Esto sí señala una oportunidad concreta para un recordatorio o una lista de próximos pasos por equipo. El sistema debería permitir dejar una nota breve al pausar («esperando probar», «falta colocar pantalla», «retomar diagnóstico») y mostrar trabajos sin actividad o con una acción pendiente. Los recordatorios deben ser configurables y no convertirse en notificaciones excesivas.
+
+
+## 1.29. Expectativas sobre un asistente digital para el taller
+
+Al preguntarle qué funciones le resultarían útiles en un asistente digital, el responsable confirmó que le interesan todas las áreas planteadas: organizar los trabajos, recordarle tareas pendientes, ayudar con diagnósticos técnicos y llevar control de ingresos, gastos y repuestos. Esto expresa una visión amplia de la herramienta deseada, pero no significa que deban implementarse todas las funciones de una vez. La recomendación es comenzar por una base operativa sencilla que reúna trabajos, estados y próximos pasos —incluidos recordatorios para retomar reparaciones interrumpidas— y luego incorporar gradualmente el apoyo al diagnóstico, el inventario y el control económico, validando cada etapa en el uso real.
