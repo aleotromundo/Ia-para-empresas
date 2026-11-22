@@ -52,6 +52,10 @@ Este intercambio multimedia forma parte del flujo normal de atención, no es una
 
 Una futura herramienta podría ayudar a ordenar la información que llega en texto, audio, fotos y videos, resumir el caso y sugerir preguntas de seguimiento. Las conclusiones técnicas deben ser revisadas por el responsable; una imagen o un audio por sí solos no garantizan un diagnóstico correcto.
 
+## 1.7. Registro fotográfico de recepción
+
+El registro fotográfico no sigue todavía un procedimiento constante. En algunos casos el responsable fotografía el equipo al recibirlo; en otros, el cliente ya envió imágenes por WhatsApp antes de llevarlo; y en ocasiones se olvida tomar las fotos. Esto sugiere incorporar un recordatorio sencillo en el futuro flujo de recepción, sin convertirlo en una carga administrativa: registrar si hay fotos previas, si se tomaron al ingreso o si no se dispone de imágenes.
+
 ## 1.6. Herramientas técnicas
 
 El responsable no utiliza un conjunto fijo de programas de diagnóstico o reparación. Selecciona y va variando las herramientas según el problema concreto y las necesidades de cada caso. AnyDesk está confirmado como una de las herramientas que utiliza para asistencia remota, pero no debe asumirse que sea la única ni que exista un paquete de software estándar.
@@ -106,6 +110,7 @@ Cada reparación debería poder guardar, como mínimo:
 - Estado físico al recibirlo.
 - Accesorios y elementos que entrega el cliente junto con el equipo (por ejemplo, cargador, fuente, cables u otros periféricos).
 - Falla que presenta o que informa el cliente.
+- Fotografías del equipo y de su estado al ingreso, cuando sea posible.
 - Diagnóstico y notas técnicas.
 - Presupuesto comunicado y fecha.
 - Estado de autorización.
@@ -133,7 +138,7 @@ La carga debe ser muy rápida y permitir completar datos gradualmente. No se deb
 
 - Tipos de reparaciones más frecuentes.
 - Qué formato podría tener el asesoramiento de compra (por ejemplo, consulta puntual o servicio incluido en una reparación), sin convertirlo en venta de productos.
-- Qué información mínima necesita conservarse de cada cliente y equipo: ya identificó como datos importantes el estado físico del equipo al recibirlo, los accesorios que entrega el cliente y la falla que presenta.
+- Qué información mínima necesita conservarse de cada cliente y equipo: ya identificó como datos importantes el estado físico del equipo al recibirlo, los accesorios que entrega el cliente y la falla que presenta. Las fotografías se toman de manera irregular: a veces las saca el responsable al recibir el equipo, otras veces el cliente las envía previamente y en ocasiones se olvida registrarlas.
 - Qué dispositivos y herramientas usa habitualmente para trabajar: no mantiene un conjunto fijo de programas; va variando las herramientas según el problema y el caso. Ya se confirmó el uso de AnyDesk para algunas asistencias remotas.
 - Qué forma de registro sería suficientemente rápida para mantenerla todos los días.
 
