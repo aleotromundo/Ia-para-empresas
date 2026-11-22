@@ -56,6 +56,10 @@ Una futura herramienta podría ayudar a ordenar la información que llega en tex
 
 Actualmente no se entrega un comprobante formal cuando el cliente deja un equipo. Las condiciones de recepción y el acuerdo quedan conversados por WhatsApp. Esto abre una oportunidad para que el futuro sistema genere un comprobante simple, compartible o imprimible, con fecha, identificación del equipo, estado físico, accesorios recibidos, falla declarada y condiciones iniciales acordadas. Debe servir como respaldo para ambas partes sin agregar pasos administrativos innecesarios ni reemplazar la conversación por WhatsApp.
 
+## 1.19. Modalidades de cobro
+
+En la conversación sobre medios de pago, el responsable mencionó el uso de Prex y también indicó que a veces realiza intercambios. Conviene que el futuro registro de cada trabajo permita indicar cómo se resolvió el pago —por ejemplo, efectivo, Prex o intercambio— y describir el acuerdo cuando no sea un pago monetario. No se deben asumir valores ni registrar un intercambio como ingreso en efectivo.
+
 ## 1.18. Información práctica para visitar el taller y pagar
 
 El responsable indica que muchos clientes llevan los equipos directamente al taller. Le resulta incómodo tener que enviarles repetidamente la dirección y, por separado, los datos de su cuenta Prex para que puedan pagar. Esto sugiere una mejora sencilla y de uso inmediato: preparar un mensaje o ficha compartible desde WhatsApp con la ubicación/dirección del taller y los datos de pago que el responsable decida incluir. Los datos financieros no deben incorporarse al repositorio ni almacenarse en el diagnóstico; se agregarían únicamente en una herramienta privada y bajo control del responsable.
