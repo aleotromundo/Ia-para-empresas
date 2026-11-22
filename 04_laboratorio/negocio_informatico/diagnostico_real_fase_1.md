@@ -56,6 +56,10 @@ Una futura herramienta podría ayudar a ordenar la información que llega en tex
 
 Actualmente no se entrega un comprobante formal cuando el cliente deja un equipo. Las condiciones de recepción y el acuerdo quedan conversados por WhatsApp. Esto abre una oportunidad para que el futuro sistema genere un comprobante simple, compartible o imprimible, con fecha, identificación del equipo, estado físico, accesorios recibidos, falla declarada y condiciones iniciales acordadas. Debe servir como respaldo para ambas partes sin agregar pasos administrativos innecesarios ni reemplazar la conversación por WhatsApp.
 
+## 1.17. Preguntas frecuentes de clientes
+
+El responsable indica que no siente que pierda demasiado tiempo respondiendo repetidamente las mismas preguntas a distintos clientes. Por ahora, no hay evidencia de que una biblioteca de respuestas frecuentes sea una prioridad. La oportunidad más clara sigue siendo ordenar las consultas entrantes para reducir interrupciones, no automatizar respuestas repetitivas sin necesidad.
+
 ## 1.16. Interrupciones durante el trabajo técnico
 
 El responsable confirma que las consultas que llegan por WhatsApp mientras está trabajando pueden interrumpirlo y hacerle perder concentración. Esto sugiere una oportunidad para ordenar las consultas entrantes y permitir clasificarlas para responderlas después, sin dejar de atender los casos urgentes. Antes de automatizar respuestas o establecer horarios, habrá que conocer qué tipos de consultas requieren atención inmediata y cuáles pueden esperar.
