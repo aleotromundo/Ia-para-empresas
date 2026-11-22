@@ -336,3 +336,19 @@ Costos que deben explicitarse:
 - Si el equipo actual no alcanza para una experiencia LIVE fluida, se debe informar y ofrecer una alternativa degradada gratuita (voz por turnos o chat), antes de proponer comprar hardware o contratar servicios.
 
 **Criterio de aceptación:** el modo LIVE debe poder probarse con componentes locales y sin clave de API paga. Escucha continua mientras el usuario mantiene LIVE activado, detección de pausas, respuesta hablada, interrupción (*barge-in*) y control visible para finalizar la sesión. Si el rendimiento local no alcanza, registrar la limitación con claridad; no sustituir silenciosamente por un servicio pago.
+
+
+## 16. Supabase existente y continuidad entre nube y computadora
+
+El usuario ya dispone de una cuenta/proyecto de Supabase. Antes de contratar o incorporar otra base de datos, se evaluará reutilizar esa infraestructura, revisar su configuración actual y comprobar qué recursos y límites tiene.
+
+Dirección propuesta:
+- **Supabase como fuente central de verdad:** clientes, equipos, reparaciones, notas, estados, inventario, movimientos y recordatorios se guardan en una base PostgreSQL central.
+- **Acceso multidispositivo:** celular y computadora acceden a la misma información mediante la aplicación y un backend seguro.
+- **Computadora del taller:** podrá disponer de una copia local o caché sincronizada para consultar información y, si se implementa correctamente, seguir registrando cambios cuando la conexión falle.
+- **Sincronización:** los cambios se envían a Supabase al recuperar conexión. Se deberán definir identificadores estables, marcas de tiempo, control de versiones y reglas para resolver conflictos; no sobrescribir silenciosamente cambios de otro dispositivo.
+- **Copias de seguridad:** contemplar exportaciones periódicas y restauración verificable. Una copia local sincronizada no reemplaza un backup independiente.
+- **Seguridad:** autenticación, permisos mínimos, políticas RLS, conexiones cifradas y secretos solo en backend. No guardar contraseñas de dispositivos de clientes.
+- **Costos:** verificar primero el proyecto Supabase existente y sus cuotas actuales. La sincronización, almacenamiento y backups pueden tener límites o costos según el uso.
+
+La aplicación será cloud-first con capacidad local progresiva: primero acceso compartido fiable; luego caché/offline y sincronización bidireccional. No se asumirá que una copia local ya está sincronizada hasta confirmar el estado de sincronización.
