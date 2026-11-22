@@ -218,3 +218,8 @@ El responsable aclara que, cuando recibe o desarma una computadora que ya no tie
 ## 1.24. Ubicación física del stock
 
 Al consultar dónde guarda los equipos donantes y los componentes recuperados, el responsable indicó que están distribuidos por distintos lugares del taller («por todos lados»), sin mencionar una ubicación o clasificación fija. Esto refuerza la conveniencia de que cualquier inventario futuro permita anotar una ubicación física aproximada y fácil de identificar (por ejemplo, sector, estante, caja o zona), sin exigir reorganizar todo el taller antes de empezar. Una primera mejora podría ser registrar los equipos completos y las piezas a medida que se utilizan, e ir ordenando gradualmente los lugares de guardado.
+
+
+## 1.25. Ubicación de equipos pendientes de reparación
+
+El responsable indica que los equipos que ingresan para reparación se colocan en la mesa de trabajo. Este dato debe considerarse al diseñar el seguimiento físico y digital: el sistema puede identificar qué equipos están en espera sobre la mesa, sin asumir que existe actualmente un sector separado para cada estado. Más adelante se podrá evaluar si conviene diferenciar físicamente los equipos según su etapa, siempre que eso simplifique el trabajo y no genere una carga innecesaria.
