@@ -44,7 +44,7 @@ Esto abre una oportunidad para ofrecer asesoramiento de compra como parte del se
 
 El responsable confirma que los clientes le envían **habitualmente y siempre que es necesario** fotos, audios y videos por WhatsApp para explicar consultas o problemas técnicos y recibir ayuda a distancia.
 
-Este intercambio multimedia forma parte del flujo normal de atención, no es una excepción. Puede ser una fuente útil para:
+Este intercambio multimedia forma parte del flujo normal de atención, no es una excepción. En algunos casos, el responsable también utiliza **AnyDesk** para acceder de forma remota al equipo del cliente y realizar asistencia directamente. Puede ser una fuente útil para:
 - Entender mejor el problema antes de recibir físicamente un equipo.
 - Hacer preguntas de diagnóstico más precisas.
 - Identificar casos que podrían resolverse de forma remota y casos que requieren revisión presencial.
@@ -54,7 +54,7 @@ Una futura herramienta podría ayudar a ordenar la información que llega en tex
 
 ## 1.5. Cobro por asistencia remota
 
-El responsable ha aprendido a ponerle precio a la ayuda técnica que brinda a distancia, pero identifica dos situaciones frecuentes: a veces el cliente se sorprende cuando conoce el costo de esa asistencia y otras veces el trabajo termina sin cobrarse.
+El responsable ha aprendido a ponerle precio a la ayuda técnica que brinda a distancia y toma en cuenta factores como el tiempo requerido, la dificultad y el tipo de situación o cliente. Sin embargo, identifica dos situaciones frecuentes: a veces el cliente se sorprende cuando conoce el costo de esa asistencia y otras veces el trabajo termina sin cobrarse.
 
 Esto señala una necesidad de hacer más claro el alcance del servicio remoto y comunicar sus condiciones económicas antes de dedicar tiempo significativo. No se trata necesariamente de fijar una tarifa rígida: podría definirse una forma sencilla de explicar cuándo una orientación inicial es gratuita, cuándo comienza una asistencia técnica cobrable y qué incluye cada intervención. Los criterios y valores deben ser definidos por el responsable.
 
@@ -127,7 +127,7 @@ La carga debe ser muy rápida y permitir completar datos gradualmente. No se deb
 - Tipos de reparaciones más frecuentes.
 - Qué formato podría tener el asesoramiento de compra (por ejemplo, consulta puntual o servicio incluido en una reparación), sin convertirlo en venta de productos.
 - Qué información mínima necesita conservarse de cada cliente y equipo.
-- Qué dispositivos y herramientas usa habitualmente para trabajar.
+- Qué dispositivos y herramientas usa habitualmente para trabajar (ya se confirmó el uso de AnyDesk para algunas asistencias remotas).
 - Qué forma de registro sería suficientemente rápida para mantenerla todos los días.
 
 ## 8. Próximo paso recomendado
