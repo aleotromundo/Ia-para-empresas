@@ -56,6 +56,10 @@ Una futura herramienta podría ayudar a ordenar la información que llega en tex
 
 Actualmente no se entrega un comprobante formal cuando el cliente deja un equipo. Las condiciones de recepción y el acuerdo quedan conversados por WhatsApp. Esto abre una oportunidad para que el futuro sistema genere un comprobante simple, compartible o imprimible, con fecha, identificación del equipo, estado físico, accesorios recibidos, falla declarada y condiciones iniciales acordadas. Debe servir como respaldo para ambas partes sin agregar pasos administrativos innecesarios ni reemplazar la conversación por WhatsApp.
 
+## 1.10. Consultas sobre el estado de la reparación
+
+El responsable indica que **pocas veces** los clientes le escriben repetidamente para preguntar cómo va la reparación. Por lo tanto, no parece ser hoy un problema importante de atención ni justifica priorizar mensajes automáticos de actualización. El seguimiento interno de los equipos sigue siendo una oportunidad útil para organizar el trabajo, pero cualquier aviso al cliente debería responder a una necesidad real y mantenerse bajo control del responsable.
+
 ## 1.9. Acceso al equipo: contraseña o PIN
 
 El acceso al equipo se resuelve de manera variable: en algunos casos el cliente deja la contraseña o el PIN al entregar el dispositivo y en otros el responsable lo solicita posteriormente por WhatsApp. Para el diseño del sistema, conviene registrar únicamente si el acceso fue proporcionado y por qué canal se coordinó, sin almacenar la contraseña o el PIN en la ficha de reparación ni replicarlos desde los chats. Si se necesita una clave temporal para realizar el trabajo, debe manejarse por un canal y procedimiento seguro, evitando conservarla una vez que deje de ser necesaria.
