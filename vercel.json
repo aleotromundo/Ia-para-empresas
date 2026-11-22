@@ -1,5 +1,4 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "framework": null,
-  "outputDirectory": "04_laboratorio/negocio_informatico/prototipo_asistente"
+  "framework": null
 }
