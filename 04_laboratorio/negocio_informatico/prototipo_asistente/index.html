@@ -119,8 +119,13 @@ header{display:flex;align-items:center;justify-content:space-between;gap:16px;ma
    const customerName = val('cliente');
    setBusy(true); feedback.textContent = 'Guardando cliente, equipo y reparación…';
    try {
-     const {data:existing,error:findError} = await client.from('clientes').select('id').eq('telefono',val('telefono')).eq('nombre',val('cliente')).limit(1);
-     if (findError) throw findError;
+     // Solo reutilizamos un cliente cuando hay teléfono para identificarlo con más seguridad.
+     let existing = null;
+     if (val('telefono')) {
+       const {data,error:findError} = await client.from('clientes').select('id').eq('telefono',val('telefono')).eq('nombre',val('cliente')).limit(1);
+       if (findError) throw findError;
+       existing = data;
+     }
      let clienteId = existing?.[0]?.id;
      if (!clienteId) {
        const {data:customer,error} = await client.from('clientes').insert({nombre:val('cliente'),telefono:val('telefono') || null}).select('id').single();
