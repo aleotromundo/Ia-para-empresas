@@ -56,6 +56,10 @@ Una futura herramienta podría ayudar a ordenar la información que llega en tex
 
 Actualmente no se entrega un comprobante formal cuando el cliente deja un equipo. Las condiciones de recepción y el acuerdo quedan conversados por WhatsApp. Esto abre una oportunidad para que el futuro sistema genere un comprobante simple, compartible o imprimible, con fecha, identificación del equipo, estado físico, accesorios recibidos, falla declarada y condiciones iniciales acordadas. Debe servir como respaldo para ambas partes sin agregar pasos administrativos innecesarios ni reemplazar la conversación por WhatsApp.
 
+## 1.21. Compra de repuestos y stock usado
+
+El responsable indica que, en la mayoría de los casos, manda al cliente a comprar el repuesto necesario. También dispone de stock de diversos componentes y materiales usados que puede aprovechar en algunas reparaciones. El futuro registro debería distinguir si el repuesto lo aportó el cliente, si salió del stock propio (y si era usado) o si lo compró el responsable. Para analizar costos y rentabilidad, conviene registrar el costo real cuando exista y no asignar un costo inventado a componentes usados cuyo valor no esté determinado.
+
 ## 1.20. Resultado económico mensual
 
 El responsable confirma que le interesa poder conocer cuánto gana realmente por mes con el taller, descontando repuestos y gastos. Esto establece como objetivo futuro un resumen mensual que diferencie ingresos monetarios, intercambios, costos de repuestos y otros gastos, y que muestre un resultado económico estimado con datos registrados. Para que el cálculo sea confiable, habrá que empezar a registrar esos movimientos de manera sencilla y distinguir dinero cobrado de acuerdos no monetarios. No se deben presentar como ganancia cifras que no estén respaldadas por datos.
