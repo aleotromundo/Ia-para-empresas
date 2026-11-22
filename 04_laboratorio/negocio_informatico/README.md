@@ -2,6 +2,11 @@
 
 Usaremos un negocio de reparación y venta de informática como primer entorno de práctica.
 
+## Diagnóstico real
+[Consultar diagnóstico real — fase 1](diagnostico_real_fase_1.md)
+
+Este documento reúne lo confirmado en el relevamiento inicial: consultas y diagnósticos por WhatsApp, seguimiento apoyado en memoria, presupuestos, autorización, registro económico y oportunidades detectadas. Se irá actualizando a medida que avance el diagnóstico.
+
 ## Oportunidades iniciales
 1. Asistente para consultas de clientes.
 2. Guía de diagnóstico inicial.
@@ -25,7 +30,6 @@ Usaremos un negocio de reparación y venta de informática como primer entorno d
 
 ## Primera meta
 Elegir un problema frecuente, construir una solución pequeña y demostrable, probarla con casos reales controlados y documentar lo aprendido.
-
 
 ## Primer prototipo
 [ Abrir prototipo de registro y seguimiento de reparaciones ](prototipo_reparaciones/index.html)
