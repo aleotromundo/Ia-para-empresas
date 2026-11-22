@@ -291,3 +291,29 @@ La presencia visual del compañero será un **caleidoscopio generativo animado**
 La captura de sonido requiere permiso explícito del usuario. En el prototipo, el análisis del nivel de audio se realiza localmente en el navegador y no transmite ni almacena el sonido. Debe existir siempre una indicación visible de cuándo el micrófono está activo y un control para apagarlo. La visualización también debe funcionar en modo ambiental sin micrófono.
 
 **Prototipo actualizado:** [Caleidoscopio reactivo en la primera pantalla](prototipo_asistente/index.html). La reacción al micrófono depende de que el navegador admita captura de audio y de que la página se ejecute en un contexto seguro (HTTPS o localhost).
+
+
+## 14. Modo LIVE — conversación de voz en tiempo real
+
+Se incorpora como requisito de experiencia un **modo LIVE** opcional. Su objetivo es permitir una conversación hablada, natural y continua con el compañero, sin tener que enviar cada frase como un mensaje separado.
+
+Comportamiento esperado:
+- Activación voluntaria desde un botón LIVE claramente visible.
+- Conversación de voz en tiempo real, con detección de cuándo el usuario empieza y termina de hablar.
+- Respuesta hablada del asistente, con posibilidad de interrumpirlo y volver a hablar (interrupción o *barge-in*).
+- El caleidoscopio expresa estados diferenciados: reposo, escuchando, procesando, hablando e interrupción.
+- Cuando sea técnicamente posible, la animación reacciona tanto a la voz entrante como a la voz que el asistente está reproduciendo.
+- El texto de la conversación puede quedar visible como apoyo, con opción de volver al modo escrito.
+- Si hay ruido, falla la conexión o el navegador no admite la función, se ofrece volver al chat y al micrófono por turnos.
+
+Privacidad y control:
+- LIVE nunca se activa por sí solo: requiere una acción explícita.
+- Indicador permanente mientras el micrófono está abierto y control visible para finalizar la sesión.
+- Informar qué servicio procesa el audio y si se transmite a un proveedor externo; no prometer procesamiento exclusivamente local cuando se use un servicio remoto.
+- No almacenar audio por defecto. Cualquier grabación o conservación requerirá una finalidad clara y consentimiento.
+- Las acciones sobre reparaciones, presupuestos, inventario, pagos o mensajes externos seguirán requiriendo confirmación, aunque la conversación sea LIVE.
+
+Implementación:
+- La arquitectura debe contemplar transporte de audio de baja latencia y una sesión de voz en tiempo real con un proveedor compatible, mediante backend seguro y credenciales efímeras; nunca exponer claves privadas en el navegador.
+- Evaluar latencia, calidad en español rioplatense, interrupciones, consumo, límites y costo antes de elegir proveedor.
+- El modo LIVE será una fase posterior al prototipo visual y al núcleo operativo. El botón o diseño de demostración no debe presentarse como conexión LIVE real hasta que el servicio esté integrado y probado.
