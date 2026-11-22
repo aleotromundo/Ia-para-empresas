@@ -213,3 +213,8 @@ Completar el relevamiento de los tipos de trabajos habituales y luego diseñar u
 ## 1.23. Equipos completos como fuente de repuestos
 
 El responsable aclara que, cuando recibe o desarma una computadora que ya no tiene arreglo, en principio conserva el equipo completo. Luego va retirando los componentes a medida que los necesita para otras reparaciones. Por lo tanto, el inventario debería contemplar dos niveles: primero, el equipo completo guardado como fuente potencial de repuestos; después, los componentes que se extraen y pasan a estar disponibles individualmente. El registro puede comenzar con una ficha simple del equipo donante (tipo/modelo, estado general, fecha aproximada de ingreso y ubicación física) y actualizarse únicamente cuando se retire una pieza. No es necesario desarmar ni catalogar todo de antemano.
+
+
+## 1.24. Ubicación física del stock
+
+Al consultar dónde guarda los equipos donantes y los componentes recuperados, el responsable indicó que están distribuidos por distintos lugares del taller («por todos lados»), sin mencionar una ubicación o clasificación fija. Esto refuerza la conveniencia de que cualquier inventario futuro permita anotar una ubicación física aproximada y fácil de identificar (por ejemplo, sector, estante, caja o zona), sin exigir reorganizar todo el taller antes de empezar. Una primera mejora podría ser registrar los equipos completos y las piezas a medida que se utilizan, e ir ordenando gradualmente los lugares de guardado.
