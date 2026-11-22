@@ -44,7 +44,7 @@ Esto abre una oportunidad para ofrecer asesoramiento de compra como parte del se
 
 El responsable confirma que los clientes le envían **habitualmente y siempre que es necesario** fotos, audios y videos por WhatsApp para explicar consultas o problemas técnicos y recibir ayuda a distancia.
 
-Este intercambio multimedia forma parte del flujo normal de atención, no es una excepción. En algunos casos, el responsable también utiliza **AnyDesk** para acceder de forma remota al equipo del cliente y realizar asistencia directamente. Puede ser una fuente útil para:
+Este intercambio multimedia forma parte del flujo normal de atención, no es una excepción. En algunos casos, el responsable también utiliza **AnyDesk** para acceder de forma remota al equipo del cliente y realizar asistencia directamente. Se presentan ambas modalidades: a veces el cliente permanece presente y observa la intervención; otras veces autoriza el acceso y deja al responsable trabajar sin acompañar la sesión. Puede ser una fuente útil para:
 - Entender mejor el problema antes de recibir físicamente un equipo.
 - Hacer preguntas de diagnóstico más precisas.
 - Identificar casos que podrían resolverse de forma remota y casos que requieren revisión presencial.
