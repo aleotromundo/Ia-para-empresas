@@ -279,3 +279,15 @@ La primera pantalla prioriza la conversación con el asistente. Incluye:
 **Prototipo navegable:** [Primera pantalla — OTROMUNDO AI](prototipo_asistente/index.html)
 
 El prototipo contiene trabajos y respuestas ficticias. El chat simula algunos flujos y el micrófono utiliza el reconocimiento de voz disponible en el navegador, si existe. Todavía no hay conexión con un modelo de IA, base de datos, sincronización, autenticación ni persistencia de registros. No usar datos reales de clientes ni considerarlo un sistema operativo de producción.
+
+
+### Identidad visual: caleidoscopio sensible al sonido
+
+La presencia visual del compañero será un **caleidoscopio generativo animado**, en lugar de un avatar humano o una esfera estática. Su movimiento tendrá tres cualidades:
+- **En reposo:** variación lenta, orgánica y continua.
+- **Al escuchar:** las formas, simetrías, brillo y expansión reaccionan al volumen y a la energía del sonido captado por el micrófono.
+- **Al responder:** podrá utilizar un patrón visual distinto sincronizado con la voz sintetizada cuando esa función esté integrada.
+
+La captura de sonido requiere permiso explícito del usuario. En el prototipo, el análisis del nivel de audio se realiza localmente en el navegador y no transmite ni almacena el sonido. Debe existir siempre una indicación visible de cuándo el micrófono está activo y un control para apagarlo. La visualización también debe funcionar en modo ambiental sin micrófono.
+
+**Prototipo actualizado:** [Caleidoscopio reactivo en la primera pantalla](prototipo_asistente/index.html). La reacción al micrófono depende de que el navegador admita captura de audio y de que la página se ejecute en un contexto seguro (HTTPS o localhost).
