@@ -317,3 +317,22 @@ Implementación:
 - La arquitectura debe contemplar transporte de audio de baja latencia y una sesión de voz en tiempo real con un proveedor compatible, mediante backend seguro y credenciales efímeras; nunca exponer claves privadas en el navegador.
 - Evaluar latencia, calidad en español rioplatense, interrupciones, consumo, límites y costo antes de elegir proveedor.
 - El modo LIVE será una fase posterior al prototipo visual y al núcleo operativo. El botón o diseño de demostración no debe presentarse como conexión LIVE real hasta que el servicio esté integrado y probado.
+
+
+## 15. Restricción económica: objetivo de costo operativo cero
+
+La preferencia del proyecto es construir y operar OTROMUNDO AI sin suscripciones, créditos de API ni pagos por minuto. Esta condición debe guiar las decisiones técnicas desde el diseño, sin prometer que cualquier servicio externo será gratuito para siempre.
+
+Estrategia prioritaria:
+- Arquitectura **local-first**: procesamiento de voz, modelo conversacional y síntesis de voz ejecutados en una computadora propia cuando el hardware lo permita.
+- Evaluar componentes de código abierto para escucha/transcripción continua, detección de voz, conversación local y voz sintética. Investigar licencias de software, modelos y voces por separado.
+- El celular y la computadora podrán ser interfaces del mismo asistente. Para que el celular acceda al motor local fuera de la red del taller habrá que resolver conectividad segura; no asumir que alojamiento remoto, túneles o servidores son gratuitos.
+- Evitar servicios de nube con cobro por minuto o tokens en el funcionamiento normal. Las pruebas con niveles gratuitos externos serán opcionales, con límites controlados y sin enviar datos reales de clientes.
+- Antes de elegir un modelo local, medir velocidad, memoria, calidad del español rioplatense, latencia, capacidad de interrumpir la voz y consumo eléctrico.
+
+Costos que deben explicitarse:
+- Aunque no haya facturas de API o suscripciones, el hardware, la electricidad, internet y el mantenimiento tienen un costo indirecto.
+- Las cuotas gratuitas de proveedores pueden cambiar, tener límites o condiciones de uso de datos. No deben ser la base de una promesa de servicio permanente.
+- Si el equipo actual no alcanza para una experiencia LIVE fluida, se debe informar y ofrecer una alternativa degradada gratuita (voz por turnos o chat), antes de proponer comprar hardware o contratar servicios.
+
+**Criterio de aceptación:** el modo LIVE debe poder probarse con componentes locales y sin clave de API paga. Escucha continua mientras el usuario mantiene LIVE activado, detección de pausas, respuesta hablada, interrupción (*barge-in*) y control visible para finalizar la sesión. Si el rendimiento local no alcanza, registrar la limitación con claridad; no sustituir silenciosamente por un servicio pago.
