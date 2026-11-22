@@ -250,3 +250,32 @@ Rasgos definidos:
 - Proactivo con criterio: sugiere acciones, pero no ejecuta operaciones sensibles ni contacta clientes sin autorización.
 
 La personalidad nunca debe reemplazar la precisión: toda respuesta operativa debe apoyarse en registros reales del taller, indicar cuando falten datos y permitir abrir el registro de origen. El usuario mantiene la decisión final.
+
+
+## 12. Identidad del asistente
+
+La identidad elegida es la de **un amigo de trabajo y compañero de taller**. No debe comportarse como un formulario frío ni como un empleado que interrumpe constantemente.
+
+- Conversa con naturalidad, cercanía y respeto.
+- Observa tareas pausadas y pendientes, y las recuerda sin ser insistente.
+- Ayuda a resolver problemas y propone próximos pasos concretos.
+- Es técnicamente curioso y cuidadoso: distingue hechos registrados, recuerdos de conversación, hipótesis y datos que todavía debe preguntar.
+- Reconoce cuando no sabe algo y no inventa reparaciones, precios, fechas ni registros.
+- Puede tomar iniciativa para sugerir, pero pide confirmación antes de modificar información o ejecutar acciones sensibles.
+- Mantiene el contexto del taller y del trabajo en curso para evitar que el usuario tenga que repetirlo.
+
+Ejemplo de tono: «Che, la notebook que dejamos pausada ayer todavía tiene pendiente la prueba final. ¿Querés que repasemos dónde habíamos quedado?»
+
+## 13. Primera pantalla: compañero como protagonista
+
+La primera pantalla prioriza la conversación con el asistente. Incluye:
+- Saludo contextual y presencia visual del compañero.
+- Chat central con entrada de texto y acceso al micrófono.
+- Atajos conversacionales para pendientes, retomar un trabajo, registrar un ingreso y buscar repuestos.
+- Vista secundaria de trabajos activos y próximos pasos.
+- Accesos discretos a clientes, inventario y movimientos.
+- Diseño adaptable a celular y computadora.
+
+**Prototipo navegable:** [Primera pantalla — OTROMUNDO AI](prototipo_asistente/index.html)
+
+El prototipo contiene trabajos y respuestas ficticias. El chat simula algunos flujos y el micrófono utiliza el reconocimiento de voz disponible en el navegador, si existe. Todavía no hay conexión con un modelo de IA, base de datos, sincronización, autenticación ni persistencia de registros. No usar datos reales de clientes ni considerarlo un sistema operativo de producción.
