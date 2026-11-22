@@ -223,3 +223,8 @@ Al consultar dónde guarda los equipos donantes y los componentes recuperados, e
 ## 1.25. Ubicación de equipos pendientes de reparación
 
 El responsable indica que los equipos que ingresan para reparación se colocan en la mesa de trabajo. Este dato debe considerarse al diseñar el seguimiento físico y digital: el sistema puede identificar qué equipos están en espera sobre la mesa, sin asumir que existe actualmente un sector separado para cada estado. Más adelante se podrá evaluar si conviene diferenciar físicamente los equipos según su etapa, siempre que eso simplifique el trabajo y no genere una carga innecesaria.
+
+
+## 1.26. Equipos en espera
+
+Los equipos que no están en trabajo activo —por ejemplo, los que esperan repuestos, autorización u otro paso— quedan cerca de la mesa de trabajo, en un mueble. No se confirmó que estén separados por motivo o estado. El diseño futuro puede reflejar tanto la ubicación física (mesa o mueble) como el motivo de espera, sin imponer una clasificación que hoy no exista.
