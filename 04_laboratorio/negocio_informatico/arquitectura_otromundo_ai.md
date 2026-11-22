@@ -221,3 +221,17 @@ La voz se diseñará desde el comienzo, pero se activará después de comprobar 
 
 ---
 *Documento de arquitectura inicial. Las tecnologías, proveedores, costos y requisitos de integración deberán verificarse antes de desplegar el sistema con datos reales.*
+
+
+## 11. Dirección de experiencia e interfaz elegida
+
+El responsable eligió el enfoque **B: asistente protagonista**. La pantalla inicial debe estar centrada en la conversación con el asistente, con entrada por texto y voz claramente accesible. El asistente será el punto de entrada principal a las funciones del taller, no una pantalla administrativa tradicional.
+
+Criterios de diseño:
+- Estética moderna, tecnológica y sobria, con identidad visual propia.
+- Asistente conversacional como elemento principal.
+- Accesos rápidos y discretos a reparaciones, clientes, inventario y finanzas.
+- Respuestas que muestren de qué registro proviene la información y permitan abrir la ficha relacionada.
+- Acciones sugeridas en forma de confirmaciones claras antes de modificar datos.
+- Diseño responsive: misma identidad y memoria en computadora y celular, adaptando la distribución a cada pantalla.
+- El panel de control y las vistas detalladas seguirán existiendo, pero como espacios secundarios a los que el asistente puede llevar al usuario.
