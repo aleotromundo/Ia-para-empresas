@@ -233,3 +233,8 @@ Los equipos que no están en trabajo activo —por ejemplo, los que esperan repu
 ## 1.27. Identificación física de los equipos
 
 El responsable identifica los equipos tanto por reconocimiento directo como, en algunas ocasiones, mediante etiquetas. El uso de etiquetas no es todavía un procedimiento constante. Una futura herramienta podría generar una identificación breve para cada ingreso (por ejemplo, número de trabajo o etiqueta imprimible) que permita reconocer rápidamente el equipo y vincularlo con su ficha, sin depender exclusivamente de la memoria.
+
+
+## 1.28. Retomar trabajos interrumpidos
+
+El responsable confirma que, cuando interrumpe una reparación para atender otra tarea, puede olvidarse de retomarla; si nadie se lo recuerda, el trabajo puede quedar detenido. Esto sí señala una oportunidad concreta para un recordatorio o una lista de próximos pasos por equipo. El sistema debería permitir dejar una nota breve al pausar («esperando probar», «falta colocar pantalla», «retomar diagnóstico») y mostrar trabajos sin actividad o con una acción pendiente. Los recordatorios deben ser configurables y no convertirse en notificaciones excesivas.
