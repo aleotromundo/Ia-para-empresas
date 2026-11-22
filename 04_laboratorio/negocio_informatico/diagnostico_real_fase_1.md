@@ -52,6 +52,10 @@ Este intercambio multimedia forma parte del flujo normal de atención, no es una
 
 Una futura herramienta podría ayudar a ordenar la información que llega en texto, audio, fotos y videos, resumir el caso y sugerir preguntas de seguimiento. Las conclusiones técnicas deben ser revisadas por el responsable; una imagen o un audio por sí solos no garantizan un diagnóstico correcto.
 
+## 1.8. Comprobante de recepción y acuerdo con el cliente
+
+Actualmente no se entrega un comprobante formal cuando el cliente deja un equipo. Las condiciones de recepción y el acuerdo quedan conversados por WhatsApp. Esto abre una oportunidad para que el futuro sistema genere un comprobante simple, compartible o imprimible, con fecha, identificación del equipo, estado físico, accesorios recibidos, falla declarada y condiciones iniciales acordadas. Debe servir como respaldo para ambas partes sin agregar pasos administrativos innecesarios ni reemplazar la conversación por WhatsApp.
+
 ## 1.7. Registro fotográfico de recepción
 
 El registro fotográfico no sigue todavía un procedimiento constante. En algunos casos el responsable fotografía el equipo al recibirlo; en otros, el cliente ya envió imágenes por WhatsApp antes de llevarlo; y en ocasiones se olvida tomar las fotos. Esto sugiere incorporar un recordatorio sencillo en el futuro flujo de recepción, sin convertirlo en una carga administrativa: registrar si hay fotos previas, si se tomaron al ingreso o si no se dispone de imágenes.
@@ -96,7 +100,7 @@ Esto señala una necesidad de hacer más claro el alcance del servicio remoto y 
 | INF-14 | Ayuda para comunicar cambios de alcance | Preparar mensajes claros y respetuosos cuando aparece trabajo adicional | Media |
 | INF-15 | Análisis de rentabilidad | Comparar precio cobrado, gastos y tiempo invertido | Media, requiere registros consistentes |
 | INF-16 | Asistente de prediagnóstico remoto | Ordenar mensajes, fotos, audios y videos recibidos por WhatsApp; resumir el caso y sugerir preguntas de seguimiento | Alta, sujeto a validación humana |
-| INF-17 | Claridad y registro del cobro remoto | Explicar de antemano cuándo una asistencia a distancia tiene costo, qué incluye y registrar si fue cobrada | Alta |
+| INF-17 | Claridad y registro del cobro remoto | Explicar de antemano cuándo una asistencia a distancia tiene costo, qué incluye y registrar si fue cobrada | Alta |\n| INF-18 | Comprobante de recepción | Dejar constancia del estado del equipo, accesorios, falla declarada y acuerdo inicial, hoy registrados solo por WhatsApp | Alta |
 
 ## 5. Primera hipótesis de solución
 
@@ -110,7 +114,7 @@ Cada reparación debería poder guardar, como mínimo:
 - Estado físico al recibirlo.
 - Accesorios y elementos que entrega el cliente junto con el equipo (por ejemplo, cargador, fuente, cables u otros periféricos).
 - Falla que presenta o que informa el cliente.
-- Fotografías del equipo y de su estado al ingreso, cuando sea posible.
+- Fotografías del equipo y de su estado al ingreso, cuando sea posible.\n- Comprobante de recepción generado para el cliente, si corresponde, con los datos básicos del ingreso y el acuerdo inicial.
 - Diagnóstico y notas técnicas.
 - Presupuesto comunicado y fecha.
 - Estado de autorización.
@@ -140,7 +144,7 @@ La carga debe ser muy rápida y permitir completar datos gradualmente. No se deb
 - Qué formato podría tener el asesoramiento de compra (por ejemplo, consulta puntual o servicio incluido en una reparación), sin convertirlo en venta de productos.
 - Qué información mínima necesita conservarse de cada cliente y equipo: ya identificó como datos importantes el estado físico del equipo al recibirlo, los accesorios que entrega el cliente y la falla que presenta. Las fotografías se toman de manera irregular: a veces las saca el responsable al recibir el equipo, otras veces el cliente las envía previamente y en ocasiones se olvida registrarlas.
 - Qué dispositivos y herramientas usa habitualmente para trabajar: no mantiene un conjunto fijo de programas; va variando las herramientas según el problema y el caso. Ya se confirmó el uso de AnyDesk para algunas asistencias remotas.
-- Qué forma de registro sería suficientemente rápida para mantenerla todos los días.
+- Qué forma de registro sería suficientemente rápida para mantenerla todos los días.\n- Qué formato mínimo debería tener el comprobante de recepción y cómo compartirlo con el cliente.
 
 ## 8. Próximo paso recomendado
 
