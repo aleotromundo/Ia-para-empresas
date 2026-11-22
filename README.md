@@ -34,3 +34,10 @@ El **Escáner de Oportunidades de IA**, una metodología reutilizable para anali
 - [Catálogo de servicios](02_servicios/catalogo_de_servicios.md)
 - [Herramientas](03_herramientas/README.md)
 - [Laboratorio informático](04_laboratorio/negocio_informatico/README.md)
+
+
+## Kit operativo de diagnóstico
+- [Cuestionario de diagnóstico](01_metodologia/cuestionario_diagnostico.md)
+- [Matriz de priorización](01_metodologia/matriz_priorizacion.md)
+- [Plantilla de informe](01_metodologia/plantilla_informe_diagnostico.md)
+- [Mapa inicial del laboratorio informático](04_laboratorio/negocio_informatico/mapa_oportunidades_inicial.md)
