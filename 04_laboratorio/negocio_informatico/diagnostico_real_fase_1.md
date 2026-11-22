@@ -13,6 +13,14 @@
 5. Cuando termina una reparación, el responsable escribe al cliente para avisarle que puede retirar el equipo.
 6. Se comunica el presupuesto al cliente y se espera su confirmación antes de realizar el trabajo cuando corresponde.
 
+## 1.1. Trabajos frecuentes identificados
+
+El responsable indicó que entre los trabajos que realiza con mayor frecuencia están:
+- Reemplazo de disco duro por una unidad SSD.
+- Instalación de Windows.
+
+Estos servicios quedan registrados como los primeros ejemplos confirmados para diseñar categorías de trabajo, plantillas de recepción y referencias futuras de presupuestos. Todavía falta relevar otros trabajos habituales.
+
 ## 2. Presupuestos y decisiones de precio
 
 - Los precios se calculan principalmente según la experiencia.
