@@ -52,6 +52,10 @@ Este intercambio multimedia forma parte del flujo normal de atención, no es una
 
 Una futura herramienta podría ayudar a ordenar la información que llega en texto, audio, fotos y videos, resumir el caso y sugerir preguntas de seguimiento. Las conclusiones técnicas deben ser revisadas por el responsable; una imagen o un audio por sí solos no garantizan un diagnóstico correcto.
 
+## 1.6. Herramientas técnicas
+
+El responsable no utiliza un conjunto fijo de programas de diagnóstico o reparación. Selecciona y va variando las herramientas según el problema concreto y las necesidades de cada caso. AnyDesk está confirmado como una de las herramientas que utiliza para asistencia remota, pero no debe asumirse que sea la única ni que exista un paquete de software estándar.
+
 ## 1.5. Cobro por asistencia remota
 
 El responsable ha aprendido a ponerle precio a la ayuda técnica que brinda a distancia y toma en cuenta factores como el tiempo requerido, la dificultad y el tipo de situación o cliente. Sin embargo, identifica dos situaciones frecuentes: a veces el cliente se sorprende cuando conoce el costo de esa asistencia y otras veces el trabajo termina sin cobrarse.
@@ -127,7 +131,7 @@ La carga debe ser muy rápida y permitir completar datos gradualmente. No se deb
 - Tipos de reparaciones más frecuentes.
 - Qué formato podría tener el asesoramiento de compra (por ejemplo, consulta puntual o servicio incluido en una reparación), sin convertirlo en venta de productos.
 - Qué información mínima necesita conservarse de cada cliente y equipo.
-- Qué dispositivos y herramientas usa habitualmente para trabajar (ya se confirmó el uso de AnyDesk para algunas asistencias remotas).
+- Qué dispositivos y herramientas usa habitualmente para trabajar: no mantiene un conjunto fijo de programas; va variando las herramientas según el problema y el caso. Ya se confirmó el uso de AnyDesk para algunas asistencias remotas.
 - Qué forma de registro sería suficientemente rápida para mantenerla todos los días.
 
 ## 8. Próximo paso recomendado
