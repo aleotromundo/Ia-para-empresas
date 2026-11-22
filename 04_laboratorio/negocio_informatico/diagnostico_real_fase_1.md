@@ -56,6 +56,10 @@ Una futura herramienta podría ayudar a ordenar la información que llega en tex
 
 Actualmente no se entrega un comprobante formal cuando el cliente deja un equipo. Las condiciones de recepción y el acuerdo quedan conversados por WhatsApp. Esto abre una oportunidad para que el futuro sistema genere un comprobante simple, compartible o imprimible, con fecha, identificación del equipo, estado físico, accesorios recibidos, falla declarada y condiciones iniciales acordadas. Debe servir como respaldo para ambas partes sin agregar pasos administrativos innecesarios ni reemplazar la conversación por WhatsApp.
 
+## 1.9. Acceso al equipo: contraseña o PIN
+
+El acceso al equipo se resuelve de manera variable: en algunos casos el cliente deja la contraseña o el PIN al entregar el dispositivo y en otros el responsable lo solicita posteriormente por WhatsApp. Para el diseño del sistema, conviene registrar únicamente si el acceso fue proporcionado y por qué canal se coordinó, sin almacenar la contraseña o el PIN en la ficha de reparación ni replicarlos desde los chats. Si se necesita una clave temporal para realizar el trabajo, debe manejarse por un canal y procedimiento seguro, evitando conservarla una vez que deje de ser necesaria.
+
 ## 1.7. Registro fotográfico de recepción
 
 El registro fotográfico no sigue todavía un procedimiento constante. En algunos casos el responsable fotografía el equipo al recibirlo; en otros, el cliente ya envió imágenes por WhatsApp antes de llevarlo; y en ocasiones se olvida tomar las fotos. Esto sugiere incorporar un recordatorio sencillo en el futuro flujo de recepción, sin convertirlo en una carga administrativa: registrar si hay fotos previas, si se tomaron al ingreso o si no se dispone de imágenes.
