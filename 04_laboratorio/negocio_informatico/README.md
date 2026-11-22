@@ -39,3 +39,10 @@ Es una prueba local: guarda los registros en el navegador mediante almacenamient
 ## Arquitectura del asistente
 
 - [Arquitectura propuesta — OTROMUNDO AI](arquitectura_otromundo_ai.md)
+
+
+## Primera pantalla del compañero
+
+[Probar la primera pantalla de OTROMUNDO AI](prototipo_asistente/index.html)
+
+Maqueta navegable de la experiencia conversacional, con atajos y trabajos ficticios. No está conectada todavía a una IA ni a una base de datos.
