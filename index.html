@@ -1,17 +1,185 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0b1017">
-  <meta http-equiv="refresh" content="0;url=04_laboratorio/negocio_informatico/prototipo_asistente/index.html">
-  <title>OTROMUNDO AI · Compañero de taller</title>
-  <script>
-    window.location.replace("04_laboratorio/negocio_informatico/prototipo_asistente/index.html");
-  </script>
-</head>
-<body style="background:#0b1017;color:#edf4fa;font:16px system-ui;padding:2rem">
-  <p>Abriendo OTROMUNDO AI…</p>
-  <p><a href="04_laboratorio/negocio_informatico/prototipo_asistente/index.html" style="color:#72e0bd">Entrar al compañero de taller</a></p>
-</body>
-</html>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10151d">
+<title>OTROMUNDO AI · Compañero de taller</title>
+<style>
+:root{color-scheme:dark;--bg:#0b1017;--panel:#131b25;--panel2:#182331;--line:#263545;--muted:#91a1b3;--text:#edf4fa;--mint:#72e0bd;--blue:#8bb8ff;--amber:#f1c77b}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -20%,#203449 0,transparent 48%),var(--bg);color:var(--text);font:15px/1.5 Inter,system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}
+button,input{font:inherit}button{cursor:pointer}.app{max-width:1280px;margin:auto;padding:22px 26px 30px}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:25px}.brand{display:flex;align-items:center;gap:12px}.mark{width:42px;height:42px;border:1px solid #456071;border-radius:14px;display:grid;place-items:center;color:var(--mint);font-size:21px;background:linear-gradient(145deg,#1c3540,#111923);box-shadow:0 0 30px #72e0bd14}.brand strong{display:block;letter-spacing:.12em;font-size:13px}.brand small{color:var(--muted);font-size:11px;letter-spacing:.09em}.status{display:flex;align-items:center;gap:8px;color:#b8c9d6;font-size:12px}.dot{width:7px;height:7px;border-radius:50%;background:var(--mint);box-shadow:0 0 12px #72e0bd}
+.layout{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(280px,.8fr);gap:18px;align-items:start}.main{min-width:0}.welcome{padding:23px 24px 18px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(135deg,#172633,#121a24 70%);position:relative;overflow:hidden}.welcome:after{content:"";position:absolute;width:240px;height:240px;border-radius:50%;right:-100px;top:-125px;border:1px solid #72e0bd24;box-shadow:0 0 0 25px #72e0bd08,0 0 0 55px #72e0bd05}.eyebrow{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--mint);font-weight:700}.welcome h1{font-size:clamp(24px,4vw,35px);line-height:1.15;letter-spacing:-.04em;margin:9px 0}.welcome p{color:#aebdca;margin:0;max-width:570px}.assistant{display:flex;align-items:center;gap:16px;margin-top:16px}.kaleido-wrap{width:142px;height:142px;flex:0 0 142px;position:relative;border-radius:50%;background:radial-gradient(circle,#1d3841,#0d1720 70%);box-shadow:0 0 38px #72e0bd20,inset 0 0 22px #72e0bd18;overflow:hidden}.kaleido-wrap:after{content:"";position:absolute;inset:7px;border:1px solid #9fffe333;border-radius:50%;pointer-events:none}#kaleido{width:100%;height:100%;display:block}.assistant b{display:block;font-size:14px}.assistant small{display:block;color:var(--muted);margin-top:3px}.soundbtn{margin-top:10px;border:1px solid #42645f;background:#17312f;color:#bdf5e4;border-radius:20px;padding:7px 11px;font-size:10px}.soundbtn[aria-pressed=true]{background:#254e46;border-color:#72e0bd}.soundstate{font-size:10px;color:#88a99f;margin-top:5px}
+
+.chat{margin-top:16px;border:1px solid var(--line);border-radius:20px;background:#101720;overflow:hidden}.chathead{padding:14px 18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}.chathead b{font-size:13px}.chathead span{font-size:11px;color:var(--muted)}.messages{padding:17px 18px;display:flex;flex-direction:column;gap:13px;min-height:230px;max-height:390px;overflow:auto}.msg{max-width:88%;padding:12px 14px;border-radius:15px;font-size:13px}.msg.ai{align-self:flex-start;background:#1a2935;border:1px solid #2a4150;color:#e4f0f4;border-top-left-radius:5px}.msg.user{align-self:flex-end;background:#1c3a39;border:1px solid #2d655b;border-top-right-radius:5px}.msg small{display:block;color:#91a1b3;font-size:10px;margin-bottom:5px}.msg strong{color:var(--mint)}.composer{padding:13px;border-top:1px solid var(--line);display:flex;gap:9px;align-items:center}.composer input{min-width:0;flex:1;background:#0b1118;border:1px solid #2b3b4a;border-radius:13px;padding:13px 14px;color:var(--text);outline:none}.composer input:focus{border-color:#72e0bd88}.iconbtn,.send{height:43px;min-width:43px;border:1px solid #314454;border-radius:13px;background:#1a2632;color:#dce9ef}.iconbtn[aria-pressed=true]{background:#513333;border-color:#d77b7b;color:white}.send{background:var(--mint);border-color:var(--mint);color:#08251f;font-weight:800;padding:0 17px}.hint{padding:0 16px 12px;color:#75879a;font-size:10px}
+.quick{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 0}.quick button{background:#16212c;border:1px solid #2b3b49;color:#b9c9d6;border-radius:30px;padding:8px 12px;font-size:11px}.quick button:hover{border-color:var(--mint);color:var(--mint)}
+.side{display:flex;flex-direction:column;gap:14px}.card{background:linear-gradient(145deg,#151f2a,#111821);border:1px solid var(--line);border-radius:18px;padding:17px}.cardhead{display:flex;align-items:center;justify-content:space-between;margin-bottom:13px}.cardhead h2{font-size:13px;margin:0}.cardhead span{font-size:10px;color:var(--muted)}.count{font-size:11px;color:var(--mint);background:#1a3835;padding:4px 8px;border-radius:20px}.job{padding:11px 0;border-top:1px solid #24313d}.job:first-of-type{border-top:0;padding-top:0}.jobtop{display:flex;justify-content:space-between;gap:8px}.job b{font-size:12px}.job small{display:block;color:var(--muted);font-size:10px;margin-top:3px}.tag{font-size:9px;border-radius:20px;padding:4px 7px;background:#273342;color:#c3d2df;white-space:nowrap;height:max-content}.tag.wait{color:var(--amber);background:#3a3020}.tag.ready{color:var(--mint);background:#1b3933}.next{font-size:10px;color:#9eb2c2;margin-top:7px}.next strong{color:#d9e6ed;font-weight:600}.links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.tile{border:1px solid #2a3a49;border-radius:13px;padding:12px;background:#121c26;color:#dce8ee;text-align:left}.tile span{display:block;font-size:17px;margin-bottom:6px}.tile b{display:block;font-size:11px}.tile small{color:var(--muted);font-size:9px}.foot{text-align:center;color:#607284;font-size:10px;margin:20px 0 0}.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#203a36;border:1px solid #3b7668;color:#dffbf2;padding:10px 15px;border-radius:12px;font-size:12px;opacity:0;pointer-events:none;transition:.2s}.toast.show{opacity:1}
+@media(max-width:820px){.app{padding:15px}.layout{grid-template-columns:1fr}.side{display:grid;grid-template-columns:1fr 1fr}.side .card:first-child{grid-column:1/-1}.welcome{padding:20px}.messages{min-height:205px}}
+@media(max-width:520px){.kaleido-wrap{width:116px;height:116px;flex-basis:116px}.assistant{gap:12px}.welcome{padding:17px}header{margin-bottom:15px}.status{font-size:0}.status .dot{width:9px;height:9px}.side{display:flex}.composer{gap:6px}.send{padding:0 13px}.msg{max-width:94%}.welcome h1{font-size:27px}}
+</style></head>
+<body><div class="app">
+<header><div class="brand"><div class="mark">✳</div><div><strong>OTROMUNDO AI</strong><small>COMPAÑERO DE TALLER</small></div></div><div class="status"><i class="dot"></i> Conectable a Supabase · asistente IA aún no conectado</div></header>
+
+<section class="card" id="supabasePanel" style="margin:0 0 16px;border-color:#42645f">
+  <div class="cardhead"><h2>Conexión del taller</h2><span id="dbStatus">Supabase · sin iniciar sesión</span></div>
+  <div id="loginBox" style="display:grid;grid-template-columns:1fr 1fr auto;gap:8px">
+    <input id="authEmail" type="email" autocomplete="username" placeholder="Correo" value="contralamaquinaok@gmail.com" style="min-width:0;background:#0b1118;border:1px solid #2b3b4a;border-radius:10px;padding:10px;color:var(--text)">
+    <input id="authPassword" type="password" autocomplete="current-password" placeholder="Contraseña" style="min-width:0;background:#0b1118;border:1px solid #2b3b4a;border-radius:10px;padding:10px;color:var(--text)">
+    <button class="send" id="loginBtn" type="button">Ingresar</button>
+  </div>
+  <div id="sessionBox" hidden style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+    <span id="sessionEmail" style="font-size:12px;color:#b8c9d6"></span><button class="iconbtn" id="logoutBtn" type="button">Cerrar sesión</button>
+  </div>
+  <p style="font-size:10px;color:var(--muted);margin:9px 0 0">Conexión directa y autenticada. La contraseña se envía a Supabase Auth; no se guarda en esta página.</p>
+</section>
+<section class="card" id="quickIntake" style="margin-bottom:16px">
+  <div class="cardhead"><h2>Registrar un ingreso real</h2><span>Se guarda en Supabase</span></div>
+  <form id="intakeForm" style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+    <input name="cliente" required placeholder="Nombre del cliente" style="min-width:0;background:#0b1118;border:1px solid #2b3b4a;border-radius:10px;padding:10px;color:var(--text)">
+    <input name="telefono" placeholder="Teléfono / WhatsApp" style="min-width:0;background:#0b1118;border:1px solid #2b3b4a;border-radius:10px;padding:10px;color:var(--text)">
+    <input name="tipo" placeholder="Tipo (notebook, PC...)" value="notebook" style="min-width:0;background:#0b1118;border:1px solid #2b3b4a;border-radius:10px;padding:10px;color:var(--text)">
+    <input name="marca" placeholder="Marca" style="min-width:0;background:#0b1118;border:1px solid #2b3b4a;border-radius:10px;padding:10px;color:var(--text)">
+    <input name="modelo" placeholder="Modelo" style="min-width:0;background:#0b1118;border:1px solid #2b3b4a;border-radius:10px;padding:10px;color:var(--text)">
+    <input name="falla" required placeholder="Falla que informa" style="min-width:0;background:#0b1118;border:1px solid #2b3b4a;border-radius:10px;padding:10px;color:var(--text)">
+    <button class="send" id="saveIntakeBtn" type="submit" style="grid-column:1/-1">Guardar ingreso</button>
+  </form>
+  <p id="intakeFeedback" role="status" style="font-size:11px;color:var(--muted);margin:8px 0 0">Iniciá sesión para registrar un equipo real. El formulario no guarda nada hasta que confirmes.</p>
+</section>
+<div class="layout"><main class="main">
+<section class="welcome"><div class="eyebrow">Tu taller, en conversación</div><h1>Buen día. ¿Qué resolvemos hoy?</h1><p>Estoy acá para ayudarte a ordenar el trabajo, retomar lo que quedó pendiente y pensar cada problema técnico con vos.</p><div class="assistant"><div class="kaleido-wrap"><canvas id="kaleido" aria-label="Caleidoscopio animado que reacciona al sonido"></canvas></div><div><b>Una presencia que escucha</b><small>El caleidoscopio se mueve suavemente y responde a tu voz y al sonido ambiente.</small><button class="soundbtn" id="soundToggle" type="button" aria-pressed="false">Activar sensibilidad sonora</button><div class="soundstate" id="soundState">Movimiento ambiental · sin micrófono</div></div></div></section>
+<section class="chat"><div class="chathead"><b>Conversación</b><span>Asistente · cercano y resolutivo</span></div><div class="messages" id="messages" aria-live="polite"><div class="msg ai"><small>COMPAÑERO</small>¡Buen día! ☕ Viendo el taller, hay <strong>3 trabajos de ejemplo</strong> para seguir. Si querés, arrancamos por el que quedó pausado y repasamos dónde habíamos dejado.</div></div><form class="composer" id="chatForm"><button class="iconbtn" id="mic" type="button" aria-label="Activar micrófono" title="Hablar">🎙</button><input id="prompt" autocomplete="off" placeholder="Decime qué necesitás..." aria-label="Escribir mensaje"><button class="send" type="submit">Enviar</button></form><div class="hint" id="voiceHint">La voz depende del navegador y de los permisos del dispositivo.</div></section>
+<div class="quick"><button data-prompt="¿Qué trabajos tengo pendientes?">Ver pendientes</button><button data-prompt="Ayudame a retomar el último trabajo pausado.">Retomar un trabajo</button><button data-prompt="Quiero registrar el ingreso de un equipo.">Registrar ingreso</button><button data-prompt="Busquemos un repuesto en el stock.">Buscar repuesto</button></div>
+</main>
+<aside class="side">
+<section class="card"><div class="cardhead"><h2>En el taller</h2><span class="count">3 de muestra</span></div>
+<article class="job"><div class="jobtop"><div><b>Notebook Lenovo</b><small>REP-026 · Martín</small></div><span class="tag wait">Pausado</span></div><div class="next">Próximo paso: <strong>retomar prueba de encendido</strong></div></article>
+<article class="job"><div class="jobtop"><div><b>PC de escritorio</b><small>REP-027 · Laura</small></div><span class="tag">En diagnóstico</span></div><div class="next">Próximo paso: <strong>revisar almacenamiento</strong></div></article>
+<article class="job"><div class="jobtop"><div><b>Notebook HP</b><small>REP-028 · Diego</small></div><span class="tag ready">Lista para retirar</span></div><div class="next">Próximo paso: <strong>coordinar retiro</strong></div></article>
+</section>
+<section class="card"><div class="cardhead"><h2>Accesos rápidos</h2><span>Atajos</span></div><div class="links">
+<button class="tile" data-prompt="Quiero registrar un equipo nuevo."><span>＋</span><b>Nuevo ingreso</b><small>Registrar equipo</small></button>
+<button class="tile" data-prompt="Mostrame el historial de un cliente."><span>◷</span><b>Clientes</b><small>Buscar antecedentes</small></button>
+<button class="tile" data-prompt="Ayudame a encontrar un componente usado."><span>⌕</span><b>Inventario</b><small>Buscar repuestos</small></button>
+<button class="tile" data-prompt="Quiero revisar ingresos, gastos y pagos del mes."><span>▤</span><b>Movimientos</b><small>Ingresos y gastos</small></button>
+</div></section>
+</aside></div>
+<div class="foot">OTROMUNDO AI · Prototipo de experiencia · Los ejemplos visuales son ficticios. Los ingresos enviados desde el formulario se guardan en Supabase.</div></div><div class="toast" id="toast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+/* Conexión Supabase OTROMUNDO AI. La publishable key es pública; RLS protege los datos. */
+(() => {
+ const URL = 'https://jjmjxzrqahltftsmecjk.supabase.co';
+ const KEY = 'sb_publishable_KVTnF0Xiy_-havO2lWOcJQ_jPL-cbs7';
+ const statusEl = document.getElementById('dbStatus');
+ const loginBox = document.getElementById('loginBox');
+ const sessionBox = document.getElementById('sessionBox');
+ const sessionEmail = document.getElementById('sessionEmail');
+ const intakeForm = document.getElementById('intakeForm');
+ const feedback = document.getElementById('intakeFeedback');
+ const saveBtn = document.getElementById('saveIntakeBtn');
+ if (!window.supabase?.createClient) { statusEl.textContent = 'No se pudo cargar Supabase JS'; feedback.textContent = 'Revisá la conexión a internet y recargá.'; return; }
+ const client = window.supabase.createClient(URL, KEY, {auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});
+ const setBusy = (busy) => { saveBtn.disabled = busy; saveBtn.textContent = busy ? 'Guardando…' : 'Guardar ingreso'; };
+ async function renderSession(session) {
+   const logged = !!session;
+   loginBox.hidden = logged; loginBox.style.display = logged ? 'none' : 'grid'; sessionBox.hidden = !logged;
+   sessionBox.style.display = logged ? 'flex' : 'none';
+   sessionEmail.textContent = logged ? 'Sesión activa: ' + (session.user.email || 'usuario autenticado') : '';
+   statusEl.textContent = logged ? 'Conectado · sesión segura' : 'Supabase · sin iniciar sesión';
+   feedback.textContent = logged ? 'Listo para registrar ingresos reales en la base del taller.' : 'Iniciá sesión para registrar un equipo real. No se guarda nada hasta confirmar.';
+ }
+ document.getElementById('loginBtn').addEventListener('click', async () => {
+   const email = document.getElementById('authEmail').value.trim();
+   const password = document.getElementById('authPassword').value;
+   if (!email || !password) { statusEl.textContent = 'Ingresá correo y contraseña'; return; }
+   const btn = document.getElementById('loginBtn'); btn.disabled = true; btn.textContent = 'Ingresando…';
+   const {data,error} = await client.auth.signInWithPassword({email,password});
+   btn.disabled = false; btn.textContent = 'Ingresar';
+   if (error) { statusEl.textContent = 'No se pudo iniciar sesión'; feedback.textContent = error.message; return; }
+   document.getElementById('authPassword').value = '';
+   await renderSession(data.session);
+ });
+ document.getElementById('logoutBtn').addEventListener('click', async () => {
+   const {error} = await client.auth.signOut();
+   if (error) { feedback.textContent = error.message; return; }
+   await renderSession(null);
+ });
+ client.auth.onAuthStateChange((_event, session) => { renderSession(session); });
+ client.auth.getSession().then(({data,error}) => {
+   if (error) { statusEl.textContent = 'Error verificando sesión'; feedback.textContent = error.message; return; }
+   renderSession(data.session);
+ });
+ intakeForm.addEventListener('submit', async (event) => {
+   event.preventDefault();
+   const {data:{session}} = await client.auth.getSession();
+   if (!session) { feedback.textContent = 'Primero iniciá sesión.'; return; }
+   const fd = new FormData(intakeForm);
+   const val = (name) => String(fd.get(name) || '').trim();
+   const customerName = val('cliente');
+   setBusy(true); feedback.textContent = 'Guardando cliente, equipo y reparación…';
+   try {
+     // Solo reutilizamos un cliente cuando hay teléfono para identificarlo con más seguridad.
+     let existing = null;
+     if (val('telefono')) {
+       const {data,error:findError} = await client.from('clientes').select('id').eq('telefono',val('telefono')).eq('nombre',val('cliente')).limit(1);
+       if (findError) throw findError;
+       existing = data;
+     }
+     let clienteId = existing?.[0]?.id;
+     if (!clienteId) {
+       const {data:customer,error} = await client.from('clientes').insert({nombre:val('cliente'),telefono:val('telefono') || null}).select('id').single();
+       if (error) throw error;
+       clienteId = customer.id;
+     }
+     const {data:equipment,error:equipmentError} = await client.from('equipos').insert({
+       cliente_id:clienteId,tipo:val('tipo') || 'otro',marca:val('marca') || null,modelo:val('modelo') || null,estado_fisico:'A revisar',estado_equipo:'en_taller'
+     }).select('id').single();
+     if (equipmentError) throw equipmentError;
+     const {data:repair,error:repairError} = await client.from('reparaciones').insert({
+       cliente_id:clienteId,equipo_id:equipment.id,falla_reportada:val('falla'),estado:'ingresado',prioridad:'normal',ubicacion_fisica:'en_taller',proximo_paso:'Realizar diagnóstico'
+     }).select('id,codigo,fecha_ingreso').single();
+     if (repairError) {
+       await client.from('equipos').delete().eq('id',equipment.id);
+       throw repairError;
+     }
+     await client.from('actividad_asistente').insert({entidad_tipo:'reparacion',entidad_id:repair.id,accion:'ingreso_registrado',detalle:{cliente:val('cliente'),marca:val('marca'),modelo:val('modelo'),equipo_id:equipment.id},resultado:'confirmado'});
+     feedback.textContent = '¡Ingreso guardado! Cliente, equipo y reparación ya están en Supabase. ID: ' + repair.id;
+     intakeForm.reset();
+     if (typeof add === 'function') add('Registré el ingreso de ' + customerName + ' en la base del taller. Ya quedó guardado; el diagnóstico sigue pendiente.');
+   } catch (err) {
+     feedback.textContent = 'No se pudo completar el ingreso: ' + (err?.message || String(err)) + '. Revisá las políticas RLS y las relaciones.';
+   } finally { setBusy(false); }
+ });
+})();
+</script>
+<script>
+const $=id=>document.getElementById(id),messages=$('messages');
+function add(text,who='ai'){const el=document.createElement('div');el.className='msg '+who;const label=document.createElement('small');label.textContent=who==='ai'?'COMPAÑERO':'VOS';el.append(label,document.createTextNode(text));messages.append(el);messages.scrollTop=messages.scrollHeight}
+function reply(q){const s=q.toLowerCase();let a='Te sigo. En esta primera maqueta todavía no estoy conectado a una IA ni a los datos reales del taller. Pero podemos definir juntos ese flujo y después conectarlo.';if(s.includes('pendient'))a='En los datos de demostración hay 2 trabajos activos y 1 listo para retirar. El que figura pausado es la Lenovo REP-026; su próximo paso es retomar la prueba de encendido.';else if(s.includes('paus')||s.includes('retomar'))a='La Lenovo REP-026 figura pausada. El siguiente paso de ejemplo es retomar la prueba de encendido. Antes de cambiar el estado o guardar una nota, te pediría confirmación.';else if(s.includes('ingres')||s.includes('registr'))a='Para registrar un ingreso te pediría cliente, equipo y falla que informa. Después podemos sumar accesorios, estado físico y fotos. Nada se guarda todavía en esta maqueta.';else if(s.includes('repuest')||s.includes('stock')||s.includes('inventario'))a='Podemos buscar por tipo, modelo o ubicación aproximada. Más adelante también podremos asociar equipos donantes y componentes recuperados.';else if(s.includes('historial')||s.includes('cliente'))a='La idea es que cada cliente tenga sus equipos y que cada equipo conserve el historial de intervenciones, sin asumir que una falla nueva sea consecuencia de una reparación anterior.';else if(s.includes('hola')||s.includes('buen'))a='¡Acá estoy! Contame qué tenés entre manos y lo vamos resolviendo paso a paso.';setTimeout(()=>add(a),280)}
+$('chatForm').addEventListener('submit',e=>{e.preventDefault();const q=$('prompt').value.trim();if(!q)return;add(q,'user');$('prompt').value='';reply(q)});
+document.querySelectorAll('[data-prompt]').forEach(b=>b.addEventListener('click',()=>{$('prompt').value=b.dataset.prompt;$('chatForm').requestSubmit()}));
+let recognition=null,listening=false;const mic=$('mic');
+const SpeechRecognition=window.SpeechRecognition||window.webkitSpeechRecognition;
+if(SpeechRecognition){recognition=new SpeechRecognition();recognition.lang='es-UY';recognition.interimResults=false;recognition.maxAlternatives=1;recognition.onresult=e=>{$('prompt').value=e.results[0][0].transcript;$('voiceHint').textContent='Te entendí. Revisá el texto y enviá cuando quieras.'};recognition.onerror=()=>{$('voiceHint').textContent='No pude captar el audio. Revisá el permiso del micrófono e intentá de nuevo.'};recognition.onend=()=>{listening=false;mic.setAttribute('aria-pressed','false')};mic.addEventListener('click',()=>{if(!listening){try{recognition.start();listening=true;mic.setAttribute('aria-pressed','true');$('voiceHint').textContent='Te escucho…'}catch{}}else recognition.stop()})}else{mic.addEventListener('click',()=>{$('voiceHint').textContent='Este navegador no ofrece reconocimiento de voz. Podés escribir o probar desde otro navegador compatible.';showToast('Micrófono no disponible en este navegador')})}
+
+/* Caleidoscopio: animación generativa y análisis de volumen local, sin enviar audio. */
+(()=>{
+ const canvas=$('kaleido'),ctx=canvas.getContext('2d'),toggle=$('soundToggle'),state=$('soundState');
+ let w=0,h=0,dpr=1,level=0,target=0,angle=0,stream=null,ac=null,analyser=null,raf=0,active=false;
+ function resize(){const r=canvas.getBoundingClientRect();dpr=Math.min(devicePixelRatio||1,2);w=r.width;h=r.height;canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);ctx.setTransform(dpr,0,0,dpr,0,0)}
+ new ResizeObserver(resize).observe(canvas);resize();
+ function petal(cx,cy,r,a,amp,t){ctx.save();ctx.translate(cx,cy);ctx.rotate(a);const stretch=1+amp*.5;ctx.scale(1,stretch);const hue=158+Math.sin(t*.7+a*3)*28+amp*22;ctx.beginPath();ctx.moveTo(0,0);ctx.bezierCurveTo(r*.22,-r*.24,r*.92,-r*.3,r*stretch,0);ctx.bezierCurveTo(r*.92,r*.3,r*.22,r*.24,0,0);ctx.closePath();const g=ctx.createLinearGradient(0,-r*.3,r,0);g.addColorStop(0,'hsla('+hue+',95%,82%,.9)');g.addColorStop(.45,'hsla('+(hue+35)+',88%,58%,.75)');g.addColorStop(1,'hsla('+(hue+80)+',90%,45%,.08)');ctx.fillStyle=g;ctx.shadowBlur=12+amp*18;ctx.shadowColor='hsla('+hue+',100%,65%,.55)';ctx.fill();ctx.strokeStyle='rgba(208,255,241,.42)';ctx.lineWidth=.65;ctx.stroke();ctx.restore()}
+ function draw(t){raf=requestAnimationFrame(draw);if(analyser&&active){const arr=new Uint8Array(analyser.fftSize);analyser.getByteTimeDomainData(arr);let sum=0;for(let i=0;i<arr.length;i++){const v=(arr[i]-128)/128;sum+=v*v}target=Math.min(1,Math.sqrt(sum/arr.length)*5.5)}else target=.10+Math.sin(t*.0008)*.035;level+=(target-level)*.13;angle+=.003+level*.025;
+  ctx.clearRect(0,0,w,h);const cx=w/2,cy=h/2,R=Math.min(w,h)*.43;ctx.save();ctx.translate(cx,cy);
+  const segments=12;for(let ring=0;ring<3;ring++){const radius=R*(.42+ring*.27);for(let i=0;i<segments;i++){const a=angle*(ring%2?-.7:1)+i*Math.PI*2/segments;petal(0,0,radius*(.7+level*.22),a,level,t*.001+ring);}}
+  ctx.beginPath();ctx.arc(0,0,R*(.17+level*.045),0,Math.PI*2);const core=ctx.createRadialGradient(-4,-5,1,0,0,R*.22);core.addColorStop(0,'#f2fff9');core.addColorStop(.28,'#8fffe0');core.addColorStop(1,'rgba(48,160,145,.05)');ctx.fillStyle=core;ctx.shadowBlur=24+level*35;ctx.shadowColor='#72e0bd';ctx.fill();ctx.restore();
+ }
+ draw(0);
+ async function stop(){active=false;if(stream)stream.getTracks().forEach(t=>t.stop());stream=null;if(ac){await ac.close();ac=null}analyser=null;toggle.setAttribute('aria-pressed','false');toggle.textContent='Activar sensibilidad sonora';state.textContent='Movimiento ambiental · sin micrófono'}
+ toggle.addEventListener('click',async()=>{if(active){await stop();return}try{stream=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true,autoGainControl:true}});ac=new(window.AudioContext||window.webkitAudioContext)();const src=ac.createMediaStreamSource(stream);analyser=ac.createAnalyser();analyser.fftSize=512;src.connect(analyser);active=true;toggle.setAttribute('aria-pressed','true');toggle.textContent='Desactivar micrófono';state.textContent='Escuchando el ambiente · audio procesado localmente'}catch(e){state.textContent='No se pudo activar. Revisá permisos y conexión segura (HTTPS).';toggle.textContent='Intentar de nuevo';if(stream)stream.getTracks().forEach(t=>t.stop());stream=null}});
+ window.addEventListener('pagehide',()=>{if(stream)stream.getTracks().forEach(t=>t.stop())});
+})();
+
+function showToast(t){const el=$('toast');el.textContent=t;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),2300)}
+</script></body></html>
