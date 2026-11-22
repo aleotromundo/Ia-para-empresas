@@ -208,3 +208,8 @@ Completar el relevamiento de los tipos de trabajos habituales y luego diseñar u
 
 ---
 *Documento de trabajo actualizado a partir de las respuestas del responsable durante el diagnóstico inicial. Las oportunidades son hipótesis de diseño, no resultados de un piloto medido.*
+
+
+## 1.23. Equipos completos como fuente de repuestos
+
+El responsable aclara que, cuando recibe o desarma una computadora que ya no tiene arreglo, en principio conserva el equipo completo. Luego va retirando los componentes a medida que los necesita para otras reparaciones. Por lo tanto, el inventario debería contemplar dos niveles: primero, el equipo completo guardado como fuente potencial de repuestos; después, los componentes que se extraen y pasan a estar disponibles individualmente. El registro puede comenzar con una ficha simple del equipo donante (tipo/modelo, estado general, fecha aproximada de ingreso y ubicación física) y actualizarse únicamente cuando se retire una pieza. No es necesario desarmar ni catalogar todo de antemano.
