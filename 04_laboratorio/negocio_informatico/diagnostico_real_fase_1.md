@@ -34,12 +34,23 @@ Además de los servicios anteriores, el responsable realiza:
 
 Esto amplía el alcance del negocio: no se limita a reparación de computadoras, sino que también ofrece soporte técnico y resolución de problemas tecnológicos de distinta naturaleza. Conviene distinguir estas categorías al registrar cada trabajo para poder comparar tiempos, precios, costos y rentabilidad por tipo de servicio.
 
-
 ## 1.3. Modalidad comercial
 
 El responsable puede orientar y aconsejar a los clientes sobre qué computadora, notebook, componente o accesorio les conviene comprar, pero no le gusta dedicarse a la venta de productos. Por lo tanto, el valor comercial del negocio está principalmente en el asesoramiento técnico independiente y en los servicios de soporte y reparación, no en mantener un catálogo o impulsar ventas de equipos.
 
 Esto abre una oportunidad para ofrecer asesoramiento de compra como parte del servicio: entender la necesidad y el presupuesto del cliente, explicar alternativas y recomendar opciones adecuadas sin que el negocio tenga que convertirse en una tienda.
+
+## 1.4. Atención y diagnóstico a distancia
+
+El responsable confirma que los clientes le envían **habitualmente y siempre que es necesario** fotos, audios y videos por WhatsApp para explicar consultas o problemas técnicos y recibir ayuda a distancia.
+
+Este intercambio multimedia forma parte del flujo normal de atención, no es una excepción. Puede ser una fuente útil para:
+- Entender mejor el problema antes de recibir físicamente un equipo.
+- Hacer preguntas de diagnóstico más precisas.
+- Identificar casos que podrían resolverse de forma remota y casos que requieren revisión presencial.
+- Preparar instrucciones claras para que el cliente realice comprobaciones sencillas, cuando sea seguro y apropiado.
+
+Una futura herramienta podría ayudar a ordenar la información que llega en texto, audio, fotos y videos, resumir el caso y sugerir preguntas de seguimiento. Las conclusiones técnicas deben ser revisadas por el responsable; una imagen o un audio por sí solos no garantizan un diagnóstico correcto.
 
 ## 2. Presupuestos y decisiones de precio
 
@@ -70,6 +81,7 @@ Esto abre una oportunidad para ofrecer asesoramiento de compra como parte del se
 | INF-13 | Asistente de presupuestos | Consultar antecedentes y preparar estimaciones basadas en trabajos anteriores | Media, después de reunir datos |
 | INF-14 | Ayuda para comunicar cambios de alcance | Preparar mensajes claros y respetuosos cuando aparece trabajo adicional | Media |
 | INF-15 | Análisis de rentabilidad | Comparar precio cobrado, gastos y tiempo invertido | Media, requiere registros consistentes |
+| INF-16 | Asistente de prediagnóstico remoto | Ordenar mensajes, fotos, audios y videos recibidos por WhatsApp; resumir el caso y sugerir preguntas de seguimiento | Alta, sujeto a validación humana |
 
 ## 5. Primera hipótesis de solución
 
@@ -101,6 +113,7 @@ La carga debe ser muy rápida y permitir completar datos gradualmente. No se deb
 - No inventar costos, tiempos ni márgenes cuando falten datos.
 - Evitar almacenar contraseñas de dispositivos o datos sensibles innecesarios.
 - Proteger el acceso a datos de clientes y definir respaldo y política de conservación antes de usar el sistema en producción.
+- Las imágenes, audios y videos de clientes deben tratarse como información privada; no conservarlos más tiempo del necesario ni usarlos para otros fines sin autorización.
 
 ## 7. Próximos datos a relevar
 
