@@ -47,7 +47,7 @@ header{display:flex;align-items:center;justify-content:space-between;gap:16px;ma
 </section>
 <div class="layout"><main class="main">
 <section class="welcome"><div class="eyebrow">Tu taller, en conversación</div><h1>Buen día. ¿Qué resolvemos hoy?</h1><p>Estoy acá para ayudarte a ordenar el trabajo, retomar lo que quedó pendiente y pensar cada problema técnico con vos.</p><div class="assistant"><div class="kaleido-wrap"><canvas id="kaleido" aria-label="Caleidoscopio animado que reacciona al sonido"></canvas></div><div><b>Una presencia que escucha</b><small>El caleidoscopio se mueve suavemente y responde a tu voz y al sonido ambiente.</small><button class="soundbtn" id="soundToggle" type="button" aria-pressed="false">Activar sensibilidad sonora</button><div class="soundstate" id="soundState">Movimiento ambiental · sin micrófono</div></div></div></section>
-<section class="chat"><div class="chathead"><b>Conversación</b><span>Asistente · cercano y resolutivo</span></div><div class="messages" id="messages" aria-live="polite"><div class="msg ai"><small>COMPAÑERO</small>¡Buen día! ☕ Viendo el taller, hay <strong>3 trabajos de ejemplo</strong> para seguir. Si querés, arrancamos por el que quedó pausado y repasamos dónde habíamos dejado.</div></div><form class="composer" id="chatForm"><button class="iconbtn" id="mic" type="button" aria-label="Activar micrófono" title="Hablar">🎙</button><input id="prompt" autocomplete="off" placeholder="Decime qué necesitás..." aria-label="Escribir mensaje"><button class="send" type="submit">Enviar</button></form><div class="hint" id="voiceHint">La voz depende del navegador y de los permisos del dispositivo.</div></section>
+<section class="chat"><div class="chathead"><b>Conversación</b><span id="liveStatus">Voz local · lista</span></div><div class="messages" id="messages" aria-live="polite"><div class="msg ai"><small>COMPAÑERO</small>¡Buen día! ☕ Viendo el taller, hay <strong>3 trabajos de ejemplo</strong> para seguir. Si querés, arrancamos por el que quedó pausado y repasamos dónde habíamos dejado.</div></div><form class="composer" id="chatForm"><button class="iconbtn" id="mic" type="button" aria-label="Iniciar voz en vivo" title="Iniciar voz en vivo">🎙</button><input id="prompt" autocomplete="off" placeholder="Decime qué necesitás..." aria-label="Escribir mensaje"><button class="send" type="submit">Enviar</button></form><div class="hint" id="voiceHint">Tocá el micrófono para iniciar voz en vivo · audio procesado en este dispositivo.</div></section>
 <div class="quick"><button data-prompt="¿Qué trabajos tengo pendientes?">Ver pendientes</button><button data-prompt="Ayudame a retomar el último trabajo pausado.">Retomar un trabajo</button><button data-prompt="Quiero registrar el ingreso de un equipo.">Registrar ingreso</button><button data-prompt="Busquemos un repuesto en el stock.">Buscar repuesto</button></div>
 </main>
 <aside class="side">
@@ -155,14 +155,87 @@ header{display:flex;align-items:center;justify-content:space-between;gap:16px;ma
 </script>
 <script>
 const $=id=>document.getElementById(id),messages=$('messages');
-function add(text,who='ai'){const el=document.createElement('div');el.className='msg '+who;const label=document.createElement('small');label.textContent=who==='ai'?'COMPAÑERO':'VOS';el.append(label,document.createTextNode(text));messages.append(el);messages.scrollTop=messages.scrollHeight}
-function reply(q){const s=q.toLowerCase();let a='Te sigo. En esta primera maqueta todavía no estoy conectado a una IA ni a los datos reales del taller. Pero podemos definir juntos ese flujo y después conectarlo.';if(s.includes('pendient'))a='En los datos de demostración hay 2 trabajos activos y 1 listo para retirar. El que figura pausado es la Lenovo REP-026; su próximo paso es retomar la prueba de encendido.';else if(s.includes('paus')||s.includes('retomar'))a='La Lenovo REP-026 figura pausada. El siguiente paso de ejemplo es retomar la prueba de encendido. Antes de cambiar el estado o guardar una nota, te pediría confirmación.';else if(s.includes('ingres')||s.includes('registr'))a='Para registrar un ingreso te pediría cliente, equipo y falla que informa. Después podemos sumar accesorios, estado físico y fotos. Nada se guarda todavía en esta maqueta.';else if(s.includes('repuest')||s.includes('stock')||s.includes('inventario'))a='Podemos buscar por tipo, modelo o ubicación aproximada. Más adelante también podremos asociar equipos donantes y componentes recuperados.';else if(s.includes('historial')||s.includes('cliente'))a='La idea es que cada cliente tenga sus equipos y que cada equipo conserve el historial de intervenciones, sin asumir que una falla nueva sea consecuencia de una reparación anterior.';else if(s.includes('hola')||s.includes('buen'))a='¡Acá estoy! Contame qué tenés entre manos y lo vamos resolviendo paso a paso.';setTimeout(()=>add(a),280)}
-$('chatForm').addEventListener('submit',e=>{e.preventDefault();const q=$('prompt').value.trim();if(!q)return;add(q,'user');$('prompt').value='';reply(q)});
-document.querySelectorAll('[data-prompt]').forEach(b=>b.addEventListener('click',()=>{$('prompt').value=b.dataset.prompt;$('chatForm').requestSubmit()}));
-let recognition=null,listening=false;const mic=$('mic');
+function add(text,who='ai'){
+  const el=document.createElement('div');
+  el.className='msg '+who;
+  const label=document.createElement('small');
+  label.textContent=who==='ai'?'COMPAÑERO':'VOS';
+  el.append(label,document.createTextNode(text));
+  messages.append(el);
+  messages.scrollTop=messages.scrollHeight;
+}
+function reply(q,speakResponse=false){
+  const s=q.toLowerCase();
+  let a='Te sigo. En esta primera maqueta todavía no estoy conectado a una IA ni a los datos reales del taller. Pero podemos definir juntos ese flujo y después conectarlo.';
+  if(s.includes('pendient'))a='En los datos de demostración hay 2 trabajos activos y 1 listo para retirar. El que figura pausado es la Lenovo REP-026; su próximo paso es retomar la prueba de encendido.';
+  else if(s.includes('paus')||s.includes('retomar'))a='La Lenovo REP-026 figura pausada. El siguiente paso de ejemplo es retomar la prueba de encendido. Antes de cambiar el estado o guardar una nota, te pediría confirmación.';
+  else if(s.includes('ingres')||s.includes('registr'))a='Para registrar un ingreso te pediría cliente, equipo y falla que informa. Después podemos sumar accesorios, estado físico y fotos. Nada se guarda todavía en esta maqueta.';
+  else if(s.includes('repuest')||s.includes('stock')||s.includes('inventario'))a='Podemos buscar por tipo, modelo o ubicación aproximada. Más adelante también podremos asociar equipos donantes y componentes recuperados.';
+  else if(s.includes('historial')||s.includes('cliente'))a='La idea es que cada cliente tenga sus equipos y que cada equipo conserve el historial de intervenciones, sin asumir que una falla nueva sea consecuencia de una reparación anterior.';
+  else if(s.includes('hola')||s.includes('buen'))a='¡Acá estoy! Contame qué tenés entre manos y lo vamos resolviendo paso a paso.';
+  setTimeout(()=>{add(a);if(speakResponse||liveMode)speak(a)},280);
+}
+const liveStatus=$('liveStatus'),voiceHint=$('voiceHint');
+let liveMode=false,speaking=false;
+function updateLiveUI(){
+  mic.setAttribute('aria-pressed',String(liveMode));
+  mic.setAttribute('aria-label',liveMode?'Detener voz en vivo':'Iniciar voz en vivo');
+  mic.title=liveMode?'Detener voz en vivo':'Iniciar voz en vivo';
+  liveStatus.textContent=liveMode?(speaking?'Voz live · respondiendo':'Voz live · escuchando'):'Voz local · lista';
+}
+function speak(text){
+  if(!('speechSynthesis' in window)){voiceHint.textContent='Tu navegador no ofrece lectura de voz.';return}
+  speaking=true;
+  stopListening();
+  window.speechSynthesis.cancel();
+  const utterance=new SpeechSynthesisUtterance(text);
+  utterance.lang='es-UY';
+  utterance.rate=.98;
+  utterance.pitch=1;
+  utterance.onstart=()=>{voiceHint.textContent='Te respondo…';updateLiveUI()};
+  utterance.onend=()=>{speaking=false;voiceHint.textContent=liveMode?'Te escucho…':'Respuesta hablada lista.';updateLiveUI();if(liveMode)setTimeout(startListening,250)};
+  utterance.onerror=()=>{speaking=false;voiceHint.textContent='No pude reproducir la respuesta de voz.';updateLiveUI();if(liveMode)setTimeout(startListening,250)};
+  window.speechSynthesis.speak(utterance);
+}
+function sendMessage(text,fromVoice=false){
+  const q=text.trim();
+  if(!q)return;
+  add(q,'user');
+  $('prompt').value='';
+  reply(q,fromVoice||liveMode);
+}
+$('chatForm').addEventListener('submit',e=>{e.preventDefault();sendMessage($('prompt').value)});
+document.querySelectorAll('[data-prompt]').forEach(b=>b.addEventListener('click',()=>sendMessage(b.dataset.prompt)));
+let recognition=null,listening=false;
 const SpeechRecognition=window.SpeechRecognition||window.webkitSpeechRecognition;
-if(SpeechRecognition){recognition=new SpeechRecognition();recognition.lang='es-UY';recognition.interimResults=false;recognition.maxAlternatives=1;recognition.onresult=e=>{$('prompt').value=e.results[0][0].transcript;$('voiceHint').textContent='Te entendí. Revisá el texto y enviá cuando quieras.'};recognition.onerror=()=>{$('voiceHint').textContent='No pude captar el audio. Revisá el permiso del micrófono e intentá de nuevo.'};recognition.onend=()=>{listening=false;mic.setAttribute('aria-pressed','false')};mic.addEventListener('click',()=>{if(!listening){try{recognition.start();listening=true;mic.setAttribute('aria-pressed','true');$('voiceHint').textContent='Te escucho…'}catch{}}else recognition.stop()})}else{mic.addEventListener('click',()=>{$('voiceHint').textContent='Este navegador no ofrece reconocimiento de voz. Podés escribir o probar desde otro navegador compatible.';showToast('Micrófono no disponible en este navegador')})}
-
+function startListening(){
+  if(!recognition||speaking||listening||!liveMode)return;
+  try{recognition.start()}catch{}
+}
+function stopListening(){
+  if(recognition&&listening){try{recognition.stop()}catch{}}
+  listening=false;
+}
+function setLiveMode(enabled){
+  liveMode=enabled;
+  if(!liveMode){stopListening();if('speechSynthesis' in window)window.speechSynthesis.cancel();speaking=false;voiceHint.textContent='Voz en vivo detenida.'}
+  else {voiceHint.textContent='Te escucho…';startListening()}
+  updateLiveUI();
+}
+if(SpeechRecognition){
+  recognition=new SpeechRecognition();
+  recognition.lang='es-UY';
+  recognition.interimResults=false;
+  recognition.continuous=false;
+  recognition.maxAlternatives=1;
+  recognition.onstart=()=>{listening=true;voiceHint.textContent='Te escucho…';updateLiveUI()};
+  recognition.onresult=e=>{const text=e.results[0][0].transcript;voiceHint.textContent='Procesando: '+text;sendMessage(text,true)};
+  recognition.onerror=e=>{listening=false;if(e.error!=='no-speech'&&e.error!=='aborted')voiceHint.textContent='No pude captar el audio. Revisá el permiso del micrófono.';updateLiveUI()};
+  recognition.onend=()=>{listening=false;updateLiveUI();if(liveMode&&!speaking)setTimeout(startListening,350)};
+  mic.addEventListener('click',()=>setLiveMode(!liveMode));
+}else{
+  mic.addEventListener('click',()=>{voiceHint.textContent='Este navegador no ofrece reconocimiento de voz. Probá con Chrome o Edge.';showToast('Voz no disponible en este navegador')});
+}
 /* Caleidoscopio: animación generativa y análisis de volumen local, sin enviar audio. */
 (()=>{
  const canvas=$('kaleido'),ctx=canvas.getContext('2d'),toggle=$('soundToggle'),state=$('soundState');
