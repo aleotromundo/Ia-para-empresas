@@ -73,7 +73,21 @@ module.exports = async function handler(req, res) {
     });
 
     const data = await realtimeResponse.json();
-    return json(res, realtimeResponse.status, realtimeResponse.ok ? data : { error: data.error?.message || 'No se pudo crear la sesión realtime' });
+    if (!realtimeResponse.ok) {
+      const providerError = data.error || {};
+      console.error('OpenAI Realtime client secret error', {
+        status: realtimeResponse.status,
+        code: providerError.code || null,
+        type: providerError.type || null,
+        message: providerError.message || null,
+      });
+      return json(res, realtimeResponse.status, {
+        error: providerError.message || 'No se pudo crear la sesión realtime',
+        code: providerError.code || null,
+        type: providerError.type || null,
+      });
+    }
+    return json(res, realtimeResponse.status, data);
   } catch (error) {
     console.error('Realtime token error:', error);
     return json(res, 500, { error: 'No se pudo iniciar el motor de voz realtime' });

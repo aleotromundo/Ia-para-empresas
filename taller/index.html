@@ -224,7 +224,13 @@ async function startRealtime(){
   const offer=await realtimePc.createOffer();
   await realtimePc.setLocalDescription(offer);
   const sdpResponse=await fetch('https://api.openai.com/v1/realtime/calls',{method:'POST',body:offer.sdp,headers:{Authorization:'Bearer '+ephemeralKey,'Content-Type':'application/sdp'}});
-  if(!sdpResponse.ok)throw new Error('OpenAI no aceptó la conexión WebRTC.');
+  if(!sdpResponse.ok){
+    const rawError=await sdpResponse.text();
+    let providerError=null;
+    try{providerError=JSON.parse(rawError)}catch{}
+    const message=providerError?.error?.message||providerError?.message||rawError.slice(0,260)||'sin detalle';
+    throw new Error(`OpenAI rechazó WebRTC (${sdpResponse.status}): ${message}`);
+  }
   await realtimePc.setRemoteDescription({type:'answer',sdp:await sdpResponse.text()});
   liveMode=true;
   updateLiveUI();
