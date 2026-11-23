@@ -80,6 +80,7 @@ header{display:flex;align-items:center;justify-content:space-between;gap:16px;ma
  const saveBtn = document.getElementById('saveIntakeBtn');
  if (!window.supabase?.createClient) { statusEl.textContent = 'No se pudo cargar Supabase JS'; feedback.textContent = 'Revisá la conexión a internet y recargá.'; return; }
  const client = window.supabase.createClient(URL, KEY, {auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});
+ window.otromundoSupabase = client;
  const setBusy = (busy) => { saveBtn.disabled = busy; saveBtn.textContent = busy ? 'Guardando…' : 'Guardar ingreso'; };
  async function renderSession(session) {
    const logged = !!session;
@@ -164,7 +165,86 @@ function add(text,who='ai'){
   messages.append(el);
   messages.scrollTop=messages.scrollHeight;
 }
-function reply(q,speakResponse=false){
+const liveStatus=$('liveStatus'),voiceHint=$('voiceHint');
+let liveMode=false,realtimePc=null,realtimeDc=null,localStream=null,remoteAudio=null,assistantTranscript='';
+function updateLiveUI(){
+  mic.setAttribute('aria-pressed',String(liveMode));
+  mic.setAttribute('aria-label',liveMode?'Detener voz realtime':'Iniciar voz realtime');
+  mic.title=liveMode?'Detener voz realtime':'Iniciar voz realtime';
+  liveStatus.textContent=liveMode?'Voz realtime · conectada':'Voz realtime · lista';
+}
+function sendRealtimeEvent(event){
+  if(realtimeDc?.readyState==='open')realtimeDc.send(JSON.stringify(event));
+}
+function handleRealtimeEvent(event){
+  if(event.type==='conversation.item.input_audio_transcription.completed'&&event.transcript){add(event.transcript,'user');return}
+  if(event.type==='response.output_audio_transcript.delta'){assistantTranscript+=event.delta||'';return}
+  if(event.type==='response.output_audio_transcript.done'){
+    const text=event.transcript||assistantTranscript;
+    if(text.trim())add(text,'ai');
+    assistantTranscript='';
+    voiceHint.textContent='Te escucho…';
+    return;
+  }
+  if(event.type==='response.output_text.delta'){assistantTranscript+=event.delta||'';return}
+  if(event.type==='response.done'){
+    if(assistantTranscript.trim()){add(assistantTranscript,'ai');assistantTranscript=''}
+    voiceHint.textContent='Te escucho…';
+    return;
+  }
+  if(event.type==='error'){
+    console.error('Realtime event error',event.error);
+    voiceHint.textContent=event.error?.message||'El motor realtime informó un error.';
+  }
+}
+async function startRealtime(){
+  if(!window.RTCPeerConnection||!navigator.mediaDevices?.getUserMedia)throw new Error('Este navegador no permite WebRTC o acceso al micrófono.');
+  const supabase=window.otromundoSupabase;
+  const {data:{session}}=supabase?await supabase.auth.getSession():{data:{session:null}};
+  if(!session)throw new Error('Iniciá sesión en Supabase antes de activar la voz realtime.');
+  voiceHint.textContent='Preparando conexión segura…';
+  const tokenResponse=await fetch('/api/realtime-token',{method:'POST',headers:{Authorization:'Bearer '+session.access_token}});
+  const tokenData=await tokenResponse.json();
+  if(!tokenResponse.ok||!tokenData.value)throw new Error(tokenData.error||'No se pudo obtener el token realtime.');
+  const ephemeralKey=tokenData.value;
+  realtimePc=new RTCPeerConnection();
+  remoteAudio=document.createElement('audio');
+  remoteAudio.autoplay=true;
+  remoteAudio.setAttribute('aria-hidden','true');
+  remoteAudio.style.display='none';
+  document.body.appendChild(remoteAudio);
+  realtimePc.ontrack=e=>{remoteAudio.srcObject=e.streams[0];remoteAudio.play().catch(()=>{})};
+  realtimePc.onconnectionstatechange=()=>{
+    if(['failed','closed'].includes(realtimePc.connectionState))stopRealtime();
+  };
+  localStream=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true,autoGainControl:true}});
+  localStream.getTracks().forEach(track=>realtimePc.addTrack(track,localStream));
+  realtimeDc=realtimePc.createDataChannel('oai-events');
+  realtimeDc.addEventListener('message',e=>{try{handleRealtimeEvent(JSON.parse(e.data))}catch(error){console.error('Realtime event parse error',error)}});
+  const offer=await realtimePc.createOffer();
+  await realtimePc.setLocalDescription(offer);
+  const sdpResponse=await fetch('https://api.openai.com/v1/realtime/calls',{method:'POST',body:offer.sdp,headers:{Authorization:'Bearer '+ephemeralKey,'Content-Type':'application/sdp'}});
+  if(!sdpResponse.ok)throw new Error('OpenAI no aceptó la conexión WebRTC.');
+  await realtimePc.setRemoteDescription({type:'answer',sdp:await sdpResponse.text()});
+  liveMode=true;
+  updateLiveUI();
+  voiceHint.textContent='Te escucho… Hablá naturalmente; podés interrumpirme.';
+}
+function stopRealtime(){
+  localStream?.getTracks().forEach(track=>track.stop());
+  localStream=null;
+  realtimeDc?.close();realtimeDc=null;
+  realtimePc?.close();realtimePc=null;
+  if(remoteAudio){remoteAudio.srcObject=null;remoteAudio.remove();remoteAudio=null}
+  liveMode=false;assistantTranscript='';
+  updateLiveUI();
+  voiceHint.textContent='Voz realtime detenida.';
+}
+async function toggleRealtime(){
+  if(liveMode){stopRealtime();return}
+  try{await startRealtime()}catch(error){console.error(error);stopRealtime();voiceHint.textContent=error.message;showToast(error.message)}
+}
+function reply(q){
   const s=q.toLowerCase();
   let a='Te sigo. En esta primera maqueta todavía no estoy conectado a una IA ni a los datos reales del taller. Pero podemos definir juntos ese flujo y después conectarlo.';
   if(s.includes('pendient'))a='En los datos de demostración hay 2 trabajos activos y 1 listo para retirar. El que figura pausado es la Lenovo REP-026; su próximo paso es retomar la prueba de encendido.';
@@ -173,69 +253,24 @@ function reply(q,speakResponse=false){
   else if(s.includes('repuest')||s.includes('stock')||s.includes('inventario'))a='Podemos buscar por tipo, modelo o ubicación aproximada. Más adelante también podremos asociar equipos donantes y componentes recuperados.';
   else if(s.includes('historial')||s.includes('cliente'))a='La idea es que cada cliente tenga sus equipos y que cada equipo conserve el historial de intervenciones, sin asumir que una falla nueva sea consecuencia de una reparación anterior.';
   else if(s.includes('hola')||s.includes('buen'))a='¡Acá estoy! Contame qué tenés entre manos y lo vamos resolviendo paso a paso.';
-  setTimeout(()=>{add(a);if(speakResponse||liveMode)speak(a)},280);
+  setTimeout(()=>add(a),280);
 }
-const liveStatus=$('liveStatus'),voiceHint=$('voiceHint');
-let liveMode=false,speaking=false;
-function updateLiveUI(){
-  mic.setAttribute('aria-pressed',String(liveMode));
-  mic.setAttribute('aria-label',liveMode?'Detener voz en vivo':'Iniciar voz en vivo');
-  mic.title=liveMode?'Detener voz en vivo':'Iniciar voz en vivo';
-  liveStatus.textContent=liveMode?(speaking?'Voz live · respondiendo':'Voz live · escuchando'):'Voz local · lista';
-}
-function speak(text){
-  if(!('speechSynthesis' in window)){voiceHint.textContent='Tu navegador no ofrece lectura de voz.';return}
-  speaking=true;
-  stopListening();
-  window.speechSynthesis.cancel();
-  const utterance=new SpeechSynthesisUtterance(text);
-  utterance.lang='es-UY';
-  utterance.rate=.98;
-  utterance.pitch=1;
-  utterance.onstart=()=>{voiceHint.textContent='Te respondo…';updateLiveUI()};
-  utterance.onend=()=>{speaking=false;voiceHint.textContent=liveMode?'Te escucho…':'Respuesta hablada lista.';updateLiveUI();if(liveMode)setTimeout(startListening,250)};
-  utterance.onerror=()=>{speaking=false;voiceHint.textContent='No pude reproducir la respuesta de voz.';updateLiveUI();if(liveMode)setTimeout(startListening,250)};
-  window.speechSynthesis.speak(utterance);
-}
-function sendMessage(text,fromVoice=false){
+function sendMessage(text){
   const q=text.trim();
   if(!q)return;
-  add(q,'user');
   $('prompt').value='';
-  reply(q,fromVoice||liveMode);
+  if(realtimeDc?.readyState==='open'){
+    add(q,'user');
+    sendRealtimeEvent({type:'conversation.item.create',item:{type:'message',role:'user',content:[{type:'input_text',text:q}]}});
+    sendRealtimeEvent({type:'response.create'});
+    return;
+  }
+  add(q,'user');
+  reply(q);
 }
 $('chatForm').addEventListener('submit',e=>{e.preventDefault();sendMessage($('prompt').value)});
 document.querySelectorAll('[data-prompt]').forEach(b=>b.addEventListener('click',()=>sendMessage(b.dataset.prompt)));
-let recognition=null,listening=false;
-const SpeechRecognition=window.SpeechRecognition||window.webkitSpeechRecognition;
-function startListening(){
-  if(!recognition||speaking||listening||!liveMode)return;
-  try{recognition.start()}catch{}
-}
-function stopListening(){
-  if(recognition&&listening){try{recognition.stop()}catch{}}
-  listening=false;
-}
-function setLiveMode(enabled){
-  liveMode=enabled;
-  if(!liveMode){stopListening();if('speechSynthesis' in window)window.speechSynthesis.cancel();speaking=false;voiceHint.textContent='Voz en vivo detenida.'}
-  else {voiceHint.textContent='Te escucho…';startListening()}
-  updateLiveUI();
-}
-if(SpeechRecognition){
-  recognition=new SpeechRecognition();
-  recognition.lang='es-UY';
-  recognition.interimResults=false;
-  recognition.continuous=false;
-  recognition.maxAlternatives=1;
-  recognition.onstart=()=>{listening=true;voiceHint.textContent='Te escucho…';updateLiveUI()};
-  recognition.onresult=e=>{const text=e.results[0][0].transcript;voiceHint.textContent='Procesando: '+text;sendMessage(text,true)};
-  recognition.onerror=e=>{listening=false;if(e.error!=='no-speech'&&e.error!=='aborted')voiceHint.textContent='No pude captar el audio. Revisá el permiso del micrófono.';updateLiveUI()};
-  recognition.onend=()=>{listening=false;updateLiveUI();if(liveMode&&!speaking)setTimeout(startListening,350)};
-  mic.addEventListener('click',()=>setLiveMode(!liveMode));
-}else{
-  mic.addEventListener('click',()=>{voiceHint.textContent='Este navegador no ofrece reconocimiento de voz. Probá con Chrome o Edge.';showToast('Voz no disponible en este navegador')});
-}
+mic.addEventListener('click',toggleRealtime);
 /* Caleidoscopio: animación generativa y análisis de volumen local, sin enviar audio. */
 (()=>{
  const canvas=$('kaleido'),ctx=canvas.getContext('2d'),toggle=$('soundToggle'),state=$('soundState');
