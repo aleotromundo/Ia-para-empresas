@@ -44,7 +44,7 @@ Es una prueba local: guarda los registros en el navegador mediante almacenamient
 
 [Probar la primera pantalla de OTROMUNDO AI](prototipo_asistente/index.html)
 
-Maqueta navegable de la experiencia conversacional, con atajos y trabajos ficticios. No está conectada todavía a una IA ni a una base de datos.
+Maqueta navegable con atajos y trabajos de ejemplo. El formulario de ingreso está conectado a Supabase y el proyecto incluye un modo de voz Realtime que requiere autenticación y configuración del servidor. El chat escrito todavía utiliza respuestas locales de demostración y no consulta ni modifica los datos del taller; los trabajos que aparecen en el panel son ficticios.
 
 ## Base de datos Supabase
 
